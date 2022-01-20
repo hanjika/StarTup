@@ -1,0 +1,26 @@
+@import './abstracts/mixins';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App,
+.form-login,
+.form-signup,
+.error {
+  @include centeredFlexColumn;
+}
+
+.form-login,
+.form-signup {
+  .required:after {
+    content:' *';
+    color: red;
+  }
+}
+
+.error {
+  z-index: 1;
+}
