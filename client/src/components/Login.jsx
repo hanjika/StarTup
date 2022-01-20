@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Redirect from 'react-router';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -21,6 +22,7 @@ const Login = () => {
             axios.post('http://localhost:3000/api/login/', data).then(
                 (result) => {
                     console.log(result);
+                    return <Redirect to='/' />;
                 },
                 (error) => {
                     alert(error);

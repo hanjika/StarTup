@@ -18,13 +18,6 @@ const Home = () => {
                     </Link>
                 </div>
             </main>
-            <div>Welcome</div>
-            <Link to={'/signup'} className='signup-link'>
-                <button>Sign up</button>
-            </Link>
-            <Link to={'/login'} className='login-link'>
-                <button>Log in</button>
-            </Link>
         </div>
     )
 }
