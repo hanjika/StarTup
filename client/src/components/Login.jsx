@@ -18,7 +18,7 @@ const Login = () => {
 
     useEffect(() => {
         if (data) {
-            axios.post('https://localhost:3000/api/login/', data).then(
+            axios.post('http://localhost:3000/api/login/', data).then(
                 (result) => {
                     console.log(result);
                 },
