@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
 })
 
 //login 
-app.post('/login', async (req, res, next) => {
+app.post('/api/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email && user.password == req.body.password)
     console.log(user.email)
     if (user.email == req.body.email) {

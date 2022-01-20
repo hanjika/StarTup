@@ -31,7 +31,7 @@ const SignUp = () => {
 
     useEffect(() => {
         if (data) {
-            axios.post('https://localhost:3000/api/register', data).then(
+            axios.post('http://localhost:3000/api/register', data).then(
                 (result) => {
                     console.log(result);
                 },
