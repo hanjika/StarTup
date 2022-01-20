@@ -4,7 +4,7 @@ import Header from './Header';
 import logo from '../images/startup-logo-whitebg.png';
 
 const Home = () => {
-  return (
+    return (
         <div className='homepage'>
             <Header />
             <main>
@@ -18,6 +18,13 @@ const Home = () => {
                     </Link>
                 </div>
             </main>
+            <div>Welcome</div>
+            <Link to={'/signup'} className='signup-link'>
+                <button>Sign up</button>
+            </Link>
+            <Link to={'/login'} className='login-link'>
+                <button>Log in</button>
+            </Link>
         </div>
     )
 }
