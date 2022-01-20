@@ -1,4 +1,5 @@
 @import './abstracts/mixins';
+@import './abstracts/colours';
 
 html,
 body {
@@ -11,6 +12,36 @@ body {
 .form-signup,
 .error {
   @include centeredFlexColumn;
+}
+
+.header {
+  width: 100vw;
+  height: 10vh;
+  
+  .hamburger {
+    margin: 5vh;
+  }
+}
+
+.homepage {
+  background-color: $teal;
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .homepage-first-view {
+      background-image: url('images/colleagues-highfive.jpg');
+      background-size: cover;
+      width: 100vw;
+    }
+  }
+
+  .logo {
+    width: 60vw;
+    border-radius: 50%;
+  }
 }
 
 .form-login,
