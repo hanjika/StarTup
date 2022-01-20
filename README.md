@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # StarTup
 
 A mobile-first website created to enable the matchmaking of entrepreneurs. Single entrepreneurs can find their entrepreneurial soulmate through this platform to launch interesting conversations about business.
@@ -6,17 +5,6 @@ A mobile-first website created to enable the matchmaking of entrepreneurs. Singl
 Developed by [Shanon](https://github.com/shanon-richet) and [Hanna](https://github.com/hanjika).
 
 ## Frontend requirements (Hanna)
-=======
-# Star-Tup
-
-A mobile-first website created to enable the matchmaking of entrepreneurs. Single entrepreneurs can find their entrepreneurial soulmate through this platform to launch interesting conversations about business.
-
-Developed by Shanon and Hanna.
-
-## Frontend requirements (Hanna)
-These are the views you should be creating:
-
->>>>>>> shanon
 - A screen to register
 - A screen to login
 - A match-making view
@@ -25,11 +13,6 @@ These are the views you should be creating:
 - (optional) A settings view to edit user details
 
 ## Backend requirements (Shanon)
-<<<<<<< HEAD
-=======
-Design an API that allows people to connect with each other. You should provide the following functionalities:
-
->>>>>>> shanon
 - An endpoint to register (POST /api/register)
 - An endpoint to login/logout (POST /api/login)
 - An endpoint that list potential matches (GET /api/matches)
