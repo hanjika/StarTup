@@ -10,6 +10,7 @@ body {
 .App,
 .form-login,
 .form-signup,
+.login-success,
 .error {
   @include centeredFlexColumn;
 }
@@ -53,4 +54,12 @@ body {
 
 .error {
   z-index: 1;
+}
+
+.login-success {
+  height: 100vh;
+
+  button {
+    margin: 5vh;
+  }
 }
