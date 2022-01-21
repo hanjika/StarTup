@@ -11,14 +11,18 @@ body {
 
 .form-login,
 .form-signup,
-.form-profile-settings,
 .login-success,
 .signup-success,
+.profile-settings-section,
 .error {
   @include centeredFlexColumn;
   background-color: teal;
   color: white;
   height: 100vh;
+}
+
+.form-profile-settings {
+  @include centeredFlexColumn;
 }
 
 .header {
@@ -68,6 +72,14 @@ body {
             color: $teal;
             font-style: normal;
           }
+        }
+
+        .signup-link button {
+          background-color: $yellow;
+          color: black;
+          border: none;
+          // border-radius: 25px;
+          padding: 10px;
         }
 
         .login-link button,

@@ -1,5 +1,6 @@
 # Launch 
 
+- cd client
 - npm run start-server
 
 # StarTup

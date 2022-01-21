@@ -8,13 +8,22 @@
 }
 
 @mixin buttonStyle {
-    background-color: $yellow;
-    color: black;
-    border: none;
-    // border-radius: 25px;
+    background-color: white;
+    padding: 7px;
+    border: 3px solid $yellow;
+    color: $teal;
+
+    // background-color: $yellow;
+    // color: black;
+    // border: none;
+    // // border-radius: 25px;
     width: 40vw;
-    padding: 10px;
+    // padding: 10px;
     margin-top: 5vh;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+@mixin inputStyle {
+
 }
