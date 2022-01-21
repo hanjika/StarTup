@@ -1,18 +1,18 @@
 [
     {
         "id": "1",
-        "email": "john@gmail.com",
+        "email": "shanon.richet@gmail.com",
         "messages": [
             {
                 "conversationId": "1",
                 "message": [
                     {
-                        "author": "johnn@gmail.com",
+                        "author": "shanon.richet@gmail.com",
                         "content": "How is going?",
                         "date": "19-01-2022"
                     },
                     {
-                        "author": "morrison@gmail.com",
+                        "author": "hanna.masanjika@gmail.com",
                         "content": "Salut",
                         "date": "18-01-2022"
                     }
@@ -22,18 +22,18 @@
     },
     {
         "id": "2",
-        "email": "morrison@gmail.com",
+        "email": "hanna.masanjika@gmail.com",
         "messages": [
             {
                 "conversationId": "1",
                 "messages": [
                     {
-                        "author": "john@gmail.com",
+                        "author": "shanon.richet@gmail.com",
                         "content": "How is going?",
                         "date": "19-01-2022"
                     },
                     {
-                        "author": "morrison@gmail.com",
+                        "author": "hanna.masanjika@gmail.com",
                         "content": "Salut",
                         "date": "18-01-2022"
                     }
