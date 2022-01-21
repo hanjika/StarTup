@@ -76,6 +76,9 @@ const SignUp = () => {
             <label for='motto'><b>Personal Motto</b></label>
             <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
+            {
+                
+            }
             <Link to={'/signupsuccess'}>
                 <button type='submit'>Sign Up</button>
             </Link>

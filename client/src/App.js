@@ -9,6 +9,7 @@ import Matches from './components/Matches';
 import Conversations from './components/Conversations';
 import SignUpSuccess from './components/SignUpSuccess';
 import Api from './components/Api';
+import ProfileSettings from './components/ProfileSettings';
 
 const App = () => {
   const [id, setId] = useState(1);
@@ -20,12 +21,13 @@ const App = () => {
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login setId={setId} setName={setName} />} />
+            <Route path='/login' element={<Login id={id} setId={setId} name={name} setName={setName} />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/loginsuccess' element={<LoginSuccess id={id} name={name} />} />
             <Route path='/signupsuccess' element={<SignUpSuccess />} />
             <Route path='/matches' element={<Matches id={id} />} />
             <Route path='/conversations' element={<Conversations id={id} />} />
+            <Route path='/profilesettings' element={<ProfileSettings id={id} />} />
             <Route path='/api/login' exact element={<Api />} />
           </Routes>
         </main>
