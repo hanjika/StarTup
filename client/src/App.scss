@@ -5,9 +5,9 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Outfit', sans-serif;
 }
 
-.App,
 .form-login,
 .form-signup,
 .form-profile-settings,
@@ -15,6 +15,9 @@ body {
 .signup-success,
 .error {
   @include centeredFlexColumn;
+  background-color: teal;
+  color: white;
+  height: 100vh;
 }
 
 .header {
@@ -27,22 +30,48 @@ body {
 }
 
 .homepage {
-  background-color: $teal;
+  // background-color: $teal;
   main {
     @include centeredFlexColumn;
 
     .homepage-first-view {
       @include centeredFlexColumn;
+      position: relative;
       background-image: url('images/colleagues-highfive.jpg');
+      background-position: -60px 0; 
       background-size: cover;
+      height: 50vh;
       width: 100vw;
+
+      .homepage-text {
+        position: absolute;
+        top: 55vh;
+        @include centeredFlexColumn;
+
+        p {
+          width: 70vw;
+          text-align: center;
+          margin-bottom: 0;
+          em {
+            color: $teal;
+            font-style: normal;
+          }
+        }
+
+        .login-link button,
+        .api-link button {
+          background-color: white;
+          padding: 7px;
+          border: 3px solid $yellow;
+        }
+      }
     }
   }
 
   .logo {
     width: 60vw;
     border-radius: 50%;
-    
+    transform: translateY(24vh);
   }
 }
 
@@ -65,4 +94,15 @@ body {
   button {
     margin: 5vh;
   }
+}
+
+.profile-settings-section {
+  img {
+    height: 10vh;
+    border-radius: 50%;
+  }
+}
+
+button {
+  @include buttonStyle;
 }

@@ -14,6 +14,7 @@ const SignUp = () => {
     const [passwordRepeat, setPasswordRepeat] = useState('');
     const [birthdate, setBirthdate] = useState(today);
     const [motto, setMotto] = useState('');
+    const [photo, setPhoto] = useState('');
     const [data, setData] = useState(null);
 
     const getSign = (birthdate) => {
@@ -32,6 +33,7 @@ const SignUp = () => {
             password: password,
             birthdate: birthdate,
             motto: motto,
+            photo: photo,
             starsign: getSign(birthdate)
         }
         setData(newUser);
@@ -76,9 +78,9 @@ const SignUp = () => {
             <label for='motto'><b>Personal Motto</b></label>
             <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
-            {
-                
-            }
+            <label for='photo'><b>Attach Photo URL</b></label>
+            <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
+
             <Link to={'/signupsuccess'}>
                 <button type='submit'>Sign Up</button>
             </Link>
