@@ -1,5 +1,6 @@
 @import './abstracts/mixins';
 @import './abstracts/colours';
+@import './abstracts/breakpoints';
 
 html,
 body {
@@ -38,10 +39,17 @@ body {
       @include centeredFlexColumn;
       position: relative;
       background-image: url('images/colleagues-highfive.jpg');
-      background-position: -60px 0; 
+      background-position: 0px 0; 
       background-size: cover;
       height: 50vh;
       width: 100vw;
+      @media (min-width: $small) and (max-width: #{$medium + 1px}) {
+        background-position: -30px 0; 
+      }
+
+      @media (max-width: $small) {
+        background-position: -60px 0; 
+      }
 
       .homepage-text {
         position: absolute;
@@ -49,9 +57,13 @@ body {
         @include centeredFlexColumn;
 
         p {
-          width: 70vw;
+          width: 60vw;
           text-align: center;
           margin-bottom: 0;
+          @media (max-width: $small) {
+            width: 70vw;
+          }
+
           em {
             color: $teal;
             font-style: normal;
