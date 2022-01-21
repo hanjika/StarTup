@@ -1,36 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import LoginSuccess from './LoginSuccess';
 
 const Login = ({ id, setId, name, setName }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [data, setData] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        const userLogin = {
-            email: email,
-            password: password,
-        }
-        setData(userLogin);
+        setIsLoggedIn(true)
     }
 
-    const changePath = () => {
-        // console.log(name + id)
-        window.location.replace(`/loginsuccess`);
+    if (isLoggedIn) {
+        return (
+            <LoginSuccess />
+        )
     }
-
-    useEffect(() => {
-        const postData = async () => {
-            const result = await axios.post('http://localhost:3000/api/login/', data);
-            await setId(result.data.id);
-            await setName(result.data.first_name);
-            await changePath();
-        }
-        if (data) {
-            postData();
-        }
-    }, [data]);
 
     return (
         <form className='form-login' onSubmit={handleLoginSubmit}>
