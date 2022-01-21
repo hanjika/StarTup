@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Redirect from 'react-router';
 
-const Login = () => {
+const Login = ({ id, setId, name, setName }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [data, setData] = useState(null);
@@ -16,19 +15,20 @@ const Login = () => {
         setData(userLogin);
     }
 
+    const changePath = () => {
+        // console.log(name + id)
+        window.location.replace(`/loginsuccess`);
+    }
 
     useEffect(() => {
+        const postData = async () => {
+            const result = await axios.post('http://localhost:3000/api/login/', data);
+            await setId(result.data.id);
+            await setName(result.data.first_name);
+            await changePath();
+        }
         if (data) {
-            axios.post('http://localhost:3000/api/login/', data).then(
-                (result) => {
-                    console.log(result);
-                    return <Redirect to='/' />;
-                },
-                (error) => {
-                    alert(error);
-                    console.log(error);
-                }
-            )
+            postData();
         }
     }, [data]);
 

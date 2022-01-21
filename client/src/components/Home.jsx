@@ -6,7 +6,7 @@ import logo from '../images/startup-logo-whitebg.png';
 const Home = () => {
     return (
         <div className='homepage'>
-            <Header />
+            {/* <Header /> */}
             <main>
                 <div className='homepage-first-view'>
                     <img src={logo} alt='StarTup-logo' className='logo'></img>

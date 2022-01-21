@@ -45,9 +45,12 @@ app.post('/api/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email && user.password == req.body.password)
     console.log(user.email)
     if (user.email == req.body.email) {
-        res.send('Successfully connected')
+        res.json({
+            id: user.id,
+            first_name: user.first_name
+        });
     } else {
-        res.send('There was a problem when try to login')
+        res.send('There was a problem when trying to log in')
     }
 })
 app.post('/api/register', async (req, res, next) => {
