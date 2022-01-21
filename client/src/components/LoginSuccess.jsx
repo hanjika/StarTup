@@ -11,7 +11,6 @@ const LoginSuccess = ({ id, name }) => {
   console.log('name:' + name);
 
   return (
-    <>
       <section className='login-success'>
         {/* <h2>Welcome, {name}</h2> */}
         <Link to={'/matches'}>
@@ -20,10 +19,11 @@ const LoginSuccess = ({ id, name }) => {
         <Link to={'/conversations'}>
           <button>View conversations</button>
         </Link>
+        <Link to={'/profilesettings'}>
+          <button>Profile settings</button>
+        </Link>
         <LogoutButton />
       </section>
-    </>
-
   )
 };
 

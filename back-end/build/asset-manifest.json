@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.1eb24154.css",
-    "main.js": "/static/js/main.dc43d4db.js",
+    "main.css": "/static/css/main.6c5afb78.css",
+    "main.js": "/static/js/main.c8994f6c.js",
     "static/media/colleagues-highfive.jpg": "/static/media/colleagues-highfive.29c92493db2baae65aec.jpg",
     "static/media/startup-logo-whitebg.png": "/static/media/startup-logo-whitebg.8c657bcbf978f99fa47b.png",
     "index.html": "/index.html",
-    "main.1eb24154.css.map": "/static/css/main.1eb24154.css.map",
-    "main.dc43d4db.js.map": "/static/js/main.dc43d4db.js.map"
+    "main.6c5afb78.css.map": "/static/css/main.6c5afb78.css.map",
+    "main.c8994f6c.js.map": "/static/js/main.c8994f6c.js.map"
   },
   "entrypoints": [
-    "static/css/main.1eb24154.css",
-    "static/js/main.dc43d4db.js"
+    "static/css/main.6c5afb78.css",
+    "static/js/main.c8994f6c.js"
   ]
 }
