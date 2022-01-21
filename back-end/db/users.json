@@ -6,7 +6,8 @@
         "first_name": "Shanon",
         "last_name": "Richet",
         "birthdate": "03-03-1999",
-        "motto": "my motto"
+        "motto": "my motto",
+        "starsign": "pisces"
     },
     {
         "id": 2,
@@ -14,7 +15,8 @@
         "password": "sdop8?",
         "first_name": "Hanna",
         "last_name": "Masanjika",
-        "birthdate": "02-01-1999",
-        "motto": "my motto 2"
+        "birthdate": "16-10-1996",
+        "motto": "my motto 2",
+        "starsign": "libra"
     }
 ]

@@ -7,9 +7,10 @@ import Home from './components/Home';
 import LoginSuccess from './components/LoginSuccess';
 import Matches from './components/Matches';
 import Conversations from './components/Conversations';
+import SignUpSuccess from './components/SignUpSuccess';
 
 const App = () => {
-  const [id, setId] = useState(0);
+  const [id, setId] = useState(1);
   const [name, setName] = useState('');
 
   return (
@@ -18,9 +19,10 @@ const App = () => {
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login id={id} setId={setId} name={name} setName={setName} />} />
+            <Route path='/login' element={<Login setId={setId} setName={setName} />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/loginsuccess' element={<LoginSuccess id={id} name={name} />} />
+            <Route path='/signupsuccess' element={<SignUpSuccess />} />
             <Route path='/matches' element={<Matches id={id} />} />
             <Route path='/conversations' element={<Conversations id={id} />} />
           </Routes>

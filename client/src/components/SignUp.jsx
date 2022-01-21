@@ -3,6 +3,7 @@ import moment from 'moment';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const today = moment(new Date()).format('YYYY-MM-DD');
@@ -15,6 +16,12 @@ const SignUp = () => {
     const [motto, setMotto] = useState('');
     const [data, setData] = useState(null);
 
+    const getSign = (birthdate) => {
+        const signs = ['aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius','capricorn','aquarius','pisces'];
+        const sign = Number(new Intl.DateTimeFormat('fr-TN-u-ca-persian', {month: 'numeric'}).format(new Date(birthdate))) - 1;
+        return signs[sign];
+    }
+
     const handleSignupSubmit = (e) => {
         e.preventDefault();
         const newUser = {
@@ -24,7 +31,8 @@ const SignUp = () => {
             email: email,
             password: password,
             birthdate: birthdate,
-            motto: motto
+            motto: motto,
+            starsign: getSign(birthdate)
         }
         setData(newUser);
     }
@@ -68,7 +76,9 @@ const SignUp = () => {
             <label for='motto'><b>Personal Motto</b></label>
             <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
-            <button type='submit'>Sign Up</button>
+            <Link to={'/signupsuccess'}>
+                <button type='submit'>Sign Up</button>
+            </Link>
         </form>
     )
 }
