@@ -74,6 +74,14 @@ body {
           }
         }
 
+        .signup-link button {
+          background-color: $yellow;
+          color: black;
+          border: none;
+          // border-radius: 25px;
+          padding: 10px;
+        }
+
         .login-link button,
         .api-link button {
           background-color: white;
