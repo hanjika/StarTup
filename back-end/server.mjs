@@ -45,19 +45,33 @@ app.get('/', function (req, res) {
 
 //login 
 app.post('/api/login', async (req, res, next) => {
-    let user = users.find(user => user.email == req.body.email && user.password == req.body.password)
+    let user = users.find(user => user.email == req.body.email)
     console.log(user.email)
-    if (user.email == req.body.email) {
+    if (user.email && user.password) {
         res.json({
             id: user.id,
             first_name: user.first_name
         });
     } else {
-        res.send('There was a problem when trying to log in')
+        res.send('There was a problem')
     }
 })
-app.post('/api/register', async (req, res, next) => {
-
+app.post('/signup', async (req, res, next) => {
+    if (req.body.email && req.body.password && req.body.first_name && req.body.last_name && req.body.birthdate && req.body.motto) {
+        users.push({
+            "id": 1,
+            "email": `"${req.body.email}"`,
+            "password": `"${req.body.password}"`,
+            "first_name": `"${req.body.first_name}"`,
+            "last_name": `"${req.body.last_name}"`,
+            "birthdate": `"${req.body.birthdate}"`,
+            "motto": `"${req.body.motto}"`,
+            "starsign": ""
+        })
+        console.log(users)
+    } else {
+        res.send('Please fill all fields')
+    }
 })
 
 app.listen(port);
