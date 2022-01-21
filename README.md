@@ -1,3 +1,7 @@
+# Launch 
+
+- npm run start-server
+
 # StarTup
 
 A mobile-first website created to enable the matchmaking of entrepreneurs. Single entrepreneurs can find their entrepreneurial soulmate through this platform to launch interesting conversations about business.

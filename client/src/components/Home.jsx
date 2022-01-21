@@ -16,6 +16,9 @@ const Home = () => {
                     <Link to={'/login'} className='login-link'>
                         <button>Log in</button>
                     </Link>
+                    <Link to={'/api/home'} className='api-link'>
+                        <button>API</button>
+                    </Link>
                 </div>
             </main>
         </div>

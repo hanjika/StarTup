@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import LoginSuccess from './LoginSuccess';
 
 const Login = ({ id, setId, setName }) => {
     const [email, setEmail] = useState('');
@@ -8,14 +9,11 @@ const Login = ({ id, setId, setName }) => {
     const isMounted = useRef(false);
     const [newId, setNewId] = useState(id)
     const [posted, setPosted] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        const userLogin = {
-            email: email,
-            password: password,
-        }
-        setData(userLogin);
+        setIsLoggedIn(true)
     }
 
     // useEffect(() => {
@@ -67,6 +65,12 @@ const Login = ({ id, setId, setName }) => {
         //         postData();
         //     }
         // }, [data]);
+
+    if (isLoggedIn) {
+        return (
+            <LoginSuccess />
+        )
+    }
 
     return (
         <form className='form-login' onSubmit={handleLoginSubmit}>
