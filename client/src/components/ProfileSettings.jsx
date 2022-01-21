@@ -8,6 +8,7 @@ const ProfileSettings = ({ id }) => {
     const [lastName, setLastName] = useState('');
     const [birthdate, setBirthdate] = useState(today);
     const [motto, setMotto] = useState('');
+    const [photo, setPhoto] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
     
@@ -34,8 +35,13 @@ const ProfileSettings = ({ id }) => {
         return <p>Loading...</p>;
     } else {
         return (
-            <form className='form-profile-settings'>
+            <section className='profile-settings-section'>
                 <h2>Profile Settings</h2>
+                <img src={photo} alt='profile-image'></img>
+                <form className='form-profile-settings'>
+                    <label for='photo'><b>Change Photo</b></label>
+                    <input type='text' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
+
                     <label for='first-name' className='required'><b>First Name</b></label>
                     <input type='text' value={firstName} name='first-name' required onChange={(e) => setFirstName(e.target.value)}></input>
 
@@ -50,7 +56,9 @@ const ProfileSettings = ({ id }) => {
                     <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
                     <button type='submit'>Edit</button>  
-            </form>
+                    <button>Cancel</button>  
+                </form>
+            </section>
         )
     }
 };
