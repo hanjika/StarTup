@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Nav from './Nav';
 import logo from '../images/startup-logo-colour.png';
 
-const Header = () => {
+const Header = ({ id }) => {
     let location = useLocation();
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
@@ -17,7 +17,7 @@ const Header = () => {
         return (
             <header>
                 <img src={logo} alt='StarTup-logo' className='logo'></img>
-                <Nav toggleHamburger={toggleHamburger}/>
+                <Nav toggleHamburger={toggleHamburger} id={id} />
             </header>
         )
     }

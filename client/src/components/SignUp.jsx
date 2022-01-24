@@ -4,7 +4,6 @@ import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
 import SignUpSuccess from './SignUpSuccess';
-import { Link } from 'react-router-dom'
 
 const SignUp = () => {
     const today = moment(new Date()).format('YYYY-MM-DD');
@@ -29,30 +28,29 @@ const SignUp = () => {
     const handleSignupSubmit = (e) => {
         e.preventDefault();
         const newUser = {
-            userId: uuid(),
-            firstName: firstName,
-            lastName: lastName,
+            id: uuid(),
+            first_name: firstName,
+            last_name: lastName,
             email: email,
             password: password,
             birthdate: birthdate,
             motto: motto,
-            starsign: getSign(birthdate)
+            starsign: getSign(birthdate),
+            photo: photo
         }
         setData(newUser);
     }
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/signup/', data).then(
+            axios.post('http://localhost:3000/api/signup/', data).then(
                 (result) => {
                     console.log(result);
                     setIsRegister(true)
 
                 },
                 (error) => {
-                    alert(error);
-                    console.log(error);
-                    return <Error errorMessage={error.message} />;
+                    setError(error);
                 }
             )
         }
@@ -90,10 +88,10 @@ const SignUp = () => {
                 <label for='motto'><b>Personal Motto</b></label>
                 <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
-                <button>
-                    <Link to={'/signupsuccess'}>Log In</Link>
-                </button>
+                <label for='photo'><b>Attach Photo URL</b></label>
+                <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
 
+                <button type='submit'>Sign Up</button>
             </form>
         </section>
     )
