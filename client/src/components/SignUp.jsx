@@ -4,6 +4,7 @@ import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
 import SignUpSuccess from './SignUpSuccess';
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
     const today = moment(new Date()).format('YYYY-MM-DD');
@@ -89,7 +90,10 @@ const SignUp = () => {
                 <label for='motto'><b>Personal Motto</b></label>
                 <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
-                <button type='submit'>Sign up</button>
+                <button>
+                    <Link to={'/signupsuccess'}>Log In</Link>
+                </button>
+
             </form>
         </section>
     )
