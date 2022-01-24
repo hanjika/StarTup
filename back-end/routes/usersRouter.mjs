@@ -1,7 +1,7 @@
 import express from 'express'
 import { createRequire } from "module"
 const require = createRequire(import.meta.url);
-const users = require('../db/users.json')
+const users = require('../users.json')
 
 const usersRouter = express.Router()
 usersRouter.get('/api/users', function (req, res, next) {

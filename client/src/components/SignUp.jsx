@@ -3,7 +3,8 @@ import moment from 'moment';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
-import { Link } from 'react-router-dom';
+import SignUpSuccess from './SignUpSuccess';
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
     const today = moment(new Date()).format('YYYY-MM-DD');
@@ -16,10 +17,12 @@ const SignUp = () => {
     const [motto, setMotto] = useState('');
     const [photo, setPhoto] = useState('');
     const [data, setData] = useState(null);
+    const [isRegister, setIsRegister] = useState(false)
+    const [error, setError] = useState(null)
 
     const getSign = (birthdate) => {
-        const signs = ['aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius','capricorn','aquarius','pisces'];
-        const sign = Number(new Intl.DateTimeFormat('fr-TN-u-ca-persian', {month: 'numeric'}).format(new Date(birthdate))) - 1;
+        const signs = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
+        const sign = Number(new Intl.DateTimeFormat('fr-TN-u-ca-persian', { month: 'numeric' }).format(new Date(birthdate))) - 1;
         return signs[sign];
     }
 
@@ -33,7 +36,6 @@ const SignUp = () => {
             password: password,
             birthdate: birthdate,
             motto: motto,
-            photo: photo,
             starsign: getSign(birthdate)
         }
         setData(newUser);
@@ -41,9 +43,11 @@ const SignUp = () => {
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/api/register', data).then(
+            axios.post('http://localhost:3000/signup/', data).then(
                 (result) => {
                     console.log(result);
+                    setIsRegister(true)
+
                 },
                 (error) => {
                     alert(error);
@@ -53,6 +57,13 @@ const SignUp = () => {
             )
         }
     }, [data]);
+
+
+    if (error) {
+        return <Error errorMessage={error.message} />;
+    } else if (isRegister === true) {
+        return <SignUpSuccess />
+    }
 
     return (
         <section className='section-signup'>
@@ -79,12 +90,10 @@ const SignUp = () => {
                 <label for='motto'><b>Personal Motto</b></label>
                 <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
-                <label for='photo'><b>Attach Photo URL</b></label>
-                <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
+                <button>
+                    <Link to={'/signupsuccess'}>Log In</Link>
+                </button>
 
-                <Link to={'/signupsuccess'}>
-                    <button type='submit'>Sign Up</button>
-                </Link>
             </form>
         </section>
     )

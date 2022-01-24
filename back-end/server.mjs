@@ -5,11 +5,12 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import usersRouter from './routes/usersRouter.mjs'
 import messagesRouter from './routes/messagesRouter.mjs'
-import loginRouter from "./routes/loginRouter.mjs"
+
 const require = createRequire(import.meta.url);
-const users = require('./db/users.json')
+const users = require('./users.json')
 const express = require("express")
 const cors = require('cors')
+const fs = require('fs')
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -34,7 +35,6 @@ app.use(cors())
 
 app.use(usersRouter)
 app.use(messagesRouter)
-app.use(loginRouter)
 
 app.use('/', express.static(path))
 
@@ -43,7 +43,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
-//login 
+//login
 app.post('/api/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email)
     console.log(user.email)
@@ -51,29 +51,50 @@ app.post('/api/login', async (req, res, next) => {
         res.json({
             id: user.id,
             first_name: user.first_name
-        });
+        })
     } else {
         res.send('There was a problem')
     }
 })
-app.post('/api/register', async (req, res, next) => {
-    if (req.body.email && req.body.password && req.body.first_name && req.body.last_name && req.body.birthdate && req.body.motto) {
-        users.push({
-            "id": 1,
-            "email": `${req.body.email}`,
-            "password": `${req.body.password}`,
-            "first_name": `${req.body.first_name}`,
-            "last_name": `${req.body.last_name}`,
-            "birthdate": `${req.body.birthdate}`,
-            "motto": `${req.body.motto}`,
-            "starsign": `${req.body.starsign}`,
-            "photo": `${req.body.photo}`
+
+app.post('/api/login', async (req, res, next) => {
+    let user = users.find(user => user.email == req.body.email)
+    console.log(user.email)
+    if (user.email && user.password) {
+        res.json({
+            id: user.id,
+            first_name: user.first_name
         })
-        console.log(users)
     } else {
-        res.send('Please fill all required fields')
+        res.send('There was a problem')
     }
 })
 
-app.listen(port);
+app.post('/signup', async (req, res, next) => {
+    var data = fs.readFileSync("users.json")
+    var dataUser = JSON.parse(data)
+    let newUser = {
+        "id": 1,
+        "email": `${req.body.email}`,
+        "password": `${req.body.password}`,
+        "first_name": `${req.body.first_name}`,
+        "last_name": `${req.body.last_name}`,
+        "birthdate": `${req.body.birthdate}`,
+        "motto": `${req.body.motto}`
+    }
+    dataUser.push(newUser)
+    var newDataUser = JSON.stringify(dataUser)
+    console.log(JSON.parse(newDataUser))
+    fs.unlink('users.json', function (err) {
+        if (err) throw err
+        console.log('File removed')
+    })
+    fs.writeFile('users.json', newDataUser, (err) => {
+        if (err) throw err
+        console.log('New data added')
+    })
+})
+
+
+app.listen(port)
 console.log('Server started at http://localhost:' + port)
