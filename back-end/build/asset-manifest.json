@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.22d58cf6.css",
-    "main.js": "/static/js/main.79430f4c.js",
+    "main.css": "/static/css/main.00ad5b12.css",
+    "main.js": "/static/js/main.81e933fe.js",
+    "static/media/colleagues-highfive-desktop.jpg": "/static/media/colleagues-highfive-desktop.2544a9074bbd42cd0b5f.jpg",
     "static/media/colleagues-highfive.jpg": "/static/media/colleagues-highfive.29c92493db2baae65aec.jpg",
     "static/media/startup-logo-colour.png": "/static/media/startup-logo-colour.67cb17e510eb803444fc.png",
     "index.html": "/index.html",
-    "main.22d58cf6.css.map": "/static/css/main.22d58cf6.css.map",
-    "main.79430f4c.js.map": "/static/js/main.79430f4c.js.map"
+    "main.00ad5b12.css.map": "/static/css/main.00ad5b12.css.map",
+    "main.81e933fe.js.map": "/static/js/main.81e933fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.22d58cf6.css",
-    "static/js/main.79430f4c.js"
+    "static/css/main.00ad5b12.css",
+    "static/js/main.81e933fe.js"
   ]
 }

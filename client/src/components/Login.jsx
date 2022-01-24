@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoginSuccess from './LoginSuccess';
+import Error from './Error';
 
 const Login = ({ id, setId, name, setName }) => {
     const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ const Login = ({ id, setId, name, setName }) => {
         e.preventDefault();
         const userLogin = {
             email: email,
-            password: password,
+            password: password
         }
         setData(userLogin);
     }
@@ -35,24 +36,24 @@ const Login = ({ id, setId, name, setName }) => {
     }, [data]);
 
     if (error) {
-        return <p>Error: {error.message}</p>;
+        return <Error errorMessage={error.message} />;
     } else if (isLoggedIn) {
-        return (
-            <LoginSuccess id={id} name={name} />
-        );
+        return <LoginSuccess id={id} name={name} />
     }
 
     return (
-        <form className='form-login' onSubmit={handleLoginSubmit}>
-            <h2>Log in</h2>
-            <label for='email'><b>Email</b></label>
-            <input type='email' value={email} name='email' onChange={(e) => setEmail(e.target.value)}></input>
+        <section className='section-login'>
+            <form className='form-login' onSubmit={handleLoginSubmit}>
+                <h2>Log In</h2>
+                <label for='email'><b>Email</b></label>
+                <input type='email' value={email} name='email' onChange={(e) => setEmail(e.target.value)}></input>
 
-            <label for='password'><b>Password</b></label>
-            <input type='password' value={password} name='password' onChange={(e) => setPassword(e.target.value)}></input>
+                <label for='password'><b>Password</b></label>
+                <input type='password' value={password} name='password' onChange={(e) => setPassword(e.target.value)}></input>
 
-            <button type='submit'>Log in</button>
-        </form>
+                <button type='submit'>Log in</button>
+            </form>
+        </section>
     )
 }
 
