@@ -22,6 +22,11 @@
     margin-top: 5vh;
     text-transform: uppercase;
     font-weight: bold;
+    cursor: pointer;
+    @media (min-width: $desktop) {
+        width: 15vw;
+        border-radius: 8px;
+    }
 }
 
 @mixin inputStyle {

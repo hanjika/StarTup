@@ -1,6 +1,6 @@
 import './App.scss';
 import { React, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
@@ -10,14 +10,17 @@ import Conversations from './components/Conversations';
 import SignUpSuccess from './components/SignUpSuccess';
 import Api from './components/Api';
 import ProfileSettings from './components/ProfileSettings';
+import Header from './components/Header';
 
 const App = () => {
   const [id, setId] = useState(1);
   const [name, setName] = useState('');
+  // let location = useLocation();
 
   return (
     <div className="App">
       <BrowserRouter>
+      <Header />
         <main>
           <Routes>
             <Route path='/' element={<Home />} />

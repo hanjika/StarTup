@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Home from './Home';
 
 const LogoutButton = () => {
-    const [disconnect, setDisconnect] = useState(false)
+    const [disconnect, setDisconnect] = useState(false);
 
-    const handleLogoutSubmit = (e) => {
+    const handleLogout = (e) => {
         e.preventDefault();
-        setDisconnect(true)
+        setDisconnect(true);
     }
 
     if (disconnect) {
@@ -15,14 +15,7 @@ const LogoutButton = () => {
         )
     }
 
-
-    return (
-        <>
-            <form onSubmit={handleLogoutSubmit}>
-                <button> logout </button>
-            </form>
-        </>
-    )
+    return <button onClick={handleLogout}>Logout</button>;
 }
 
 export default LogoutButton;
