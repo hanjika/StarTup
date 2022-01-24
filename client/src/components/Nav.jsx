@@ -5,15 +5,15 @@ import { CgMenu, CgClose } from 'react-icons/cg';
 const Nav = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-    const hamburgerIcon = <CgMenu className='hamburger' size='40px' onClick={() => setHamburgerOpen(!hamburgerOpen)} />
-    const closeIcon = <CgClose className='hamburger' size='40px' onClick={() => setHamburgerOpen(!hamburgerOpen)} />
+    const hamburgerIcon = <CgMenu className='hamburger-icon' size='40px' onClick={() => setHamburgerOpen(!hamburgerOpen)} />
+    const closeIcon = <CgClose className='close-icon' size='40px' onClick={() => setHamburgerOpen(!hamburgerOpen)} />
 
     return (
         <nav className='header-nav'>
             {hamburgerOpen ? closeIcon : hamburgerIcon}
             {hamburgerOpen &&
-                <div className='mobile-nav-modal'>
-                    <NavLinks />
+                <div className='nav-modal'>
+                    <NavLinks setHamburgerOpen={setHamburgerOpen} />
                 </div>
             }      
         </nav>

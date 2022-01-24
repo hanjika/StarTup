@@ -12,7 +12,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: teal;
+  background-color: $teal;
   color: white;
   height: 20vh;
 
@@ -21,56 +21,90 @@ header {
     border-radius: 50%;
   }
 
-  .hamburger {
+  .hamburger-icon,
+  .close-icon {
     margin: 4vh 4vh 0 0;
+    cursor: pointer;
+    z-index: 100;
   }
 
+  // .close-icon {
+  //   // position: fixed;
+  //   background-color: black;
+  //   height: 10vh;
+  //   // width: 100vw;
+  //   margin: 0;
+  //   padding: 0;
+  // }
+
   .header-nav {
-    ul {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      list-style: none;
+    .nav-modal {
       background-color: white;
-      color: black;
+      height: 90vh;
+      width: 100vw;
+      position: fixed;
+      right: 0;
+      top: 15vh;
+      z-index: 1;
+
+      @media (min-width: $desktop) {
+        width: 20vw;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        list-style: none;
+        text-decoration: none;
+
+        li {
+          margin-top: 4vh;
+
+          .nav-link {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            &:hover {
+              color: $teal;
+            }
+          }
+        }
+      }
     }
   }
 }
 
 .section-login,
-.section-signup {
-  background-color: teal;
+.section-signup,
+.section-matching,
+.section-conversations,
+.login-success,
+.section-profile-settings {
+  background-color: $teal;
   color: white;
   height: 90vh;
+  margin: 0;
 }
 
 .form-login,
 .form-signup,
 .login-success,
 .signup-success,
-.profile-settings-section,
+.section-profile-settings,
+.form-profile-settings,
 .error {
-  @include centeredFlexColumn;
-  // background-color: teal;
-  // color: white;
-  // height: 100vh;
-}
-
-.form-profile-settings {
   @include centeredFlexColumn;
 }
 
 .header {
   width: 100vw;
   height: 10vh;
-  
-  .hamburger {
-    margin: 5vh;
-  }
+  margin: 0;
 }
 
 .homepage {
-  // background-color: $teal;
   main {
     @include centeredFlexColumn;
 
@@ -168,7 +202,6 @@ header {
 .error {
   background-color: $teal;
   height: 100vh;
-  z-index: 1;
 }
 
 .login-success,

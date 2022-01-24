@@ -13,7 +13,7 @@ const LoginSuccess = ({ id, name }) => {
   return (
       <section className='login-success'>
         {/* <h2>Welcome, {name}</h2> */}
-        <Link to={'/matches'}>
+        <Link to={'/match'}>
           <button>Start matching</button>
         </Link>
         <Link to={'/conversations'}>
