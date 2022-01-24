@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavLinks from './NavLinks';
 import { CgMenu, CgClose } from 'react-icons/cg';
 
-const Nav = () => {
+const Nav = ({ id }) => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
     const hamburgerIcon = <CgMenu className='hamburger-icon' size='40px' onClick={() => setHamburgerOpen(!hamburgerOpen)} />
@@ -13,7 +13,7 @@ const Nav = () => {
             {hamburgerOpen ? closeIcon : hamburgerIcon}
             {hamburgerOpen &&
                 <div className='nav-modal'>
-                    <NavLinks setHamburgerOpen={setHamburgerOpen} />
+                    <NavLinks setHamburgerOpen={setHamburgerOpen} id={id} />
                 </div>
             }      
         </nav>

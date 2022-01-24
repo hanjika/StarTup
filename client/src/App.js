@@ -13,14 +13,14 @@ import ProfileSettings from './components/ProfileSettings';
 import Header from './components/Header';
 
 const App = () => {
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(0);
   const [name, setName] = useState('');
   const [likedUsers, setLikedUsers] = useState([]);
 
   return (
     <div className="App">
       <BrowserRouter>
-      <Header />
+      <Header id={id} />
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
