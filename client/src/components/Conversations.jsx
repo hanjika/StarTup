@@ -26,7 +26,7 @@ const Conversations = ({ id }) => {
       return <p>Loading...</p>;
   } else {
     return (
-      <section className='conversation-section'>
+      <section className='section-conversations'>
           <h2>Your conversations</h2>
           <p>You have {messages.length} messages</p>
       </section>

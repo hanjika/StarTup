@@ -1,26 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavLinks = () => {
+const NavLinks = ({ setHamburgerOpen }) => {
   return (
     <ul>
         <li>
-            <Link to={'/login'}>Log In</Link>
+            <Link to={'/login'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Log In</Link>
         </li>
         <li>
-            <Link to={'/signup'}>Sign Up</Link>
+            <Link to={'/signup'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Sign Up</Link>
         </li>
         <li>
-            <Link to={'/matches'}>Start Matching</Link>
+            <Link to={'/match'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Start Matching</Link>
         </li>
         <li>
-            <Link to={'/conversations'}>Matches</Link>
+            <Link to={'/conversations'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Matches</Link>
         </li>
         <li>
-            <Link to={'/profilesettings'}>Profile Settings</Link>
+            <Link to={'/profilesettings'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Profile Settings</Link>
         </li>
         {/* <li>
-            <Link to={'/logout'}>Logout</Link>
+            <Link to={'/logout'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Logout</Link>
         </li> */}
     </ul>
   );
