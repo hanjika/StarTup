@@ -1,7 +1,7 @@
 import express from 'express'
 import { createRequire } from "module"
 const require = createRequire(import.meta.url);
-const messages = require('../db/messages.json')
+const messages = require('../messages.json')
 
 const messagesRouter = express.Router()
 messagesRouter.get('/api/messages', function (req, res, next) {

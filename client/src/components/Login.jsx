@@ -4,11 +4,11 @@ import LoginSuccess from './LoginSuccess';
 import Error from './Error';
 
 const Login = ({ id, setId, name, setName }) => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [data, setData] = useState(null);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [error, setError] = useState(null);
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [data, setData] = useState(null)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [error, setError] = useState(null)
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const Login = ({ id, setId, name, setName }) => {
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/api/login/', data).then(
+            axios.post('http://localhost:3000/api/login', data).then(
                 (result) => {
                     console.log(result.data);
                     setId(result.data.id);
