@@ -220,6 +220,14 @@ header {
   }
 }
 
+.section-matching {
+  .user-card {
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
 button {
   @include buttonStyle;
 }
