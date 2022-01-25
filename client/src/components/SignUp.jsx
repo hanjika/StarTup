@@ -99,7 +99,6 @@ const SignUp = () => {
                     <button type='submit'>Sign up</button>
                 </Link>
 
-
             </form >
         </section >
     )
