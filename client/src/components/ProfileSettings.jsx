@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 import Error from './Error';
 import blankProfileImage from '../images/blank-profile-picture.jpg';
 
 const ProfileSettings = ({ id }) => {
     const today = moment(new Date()).format('YYYY-MM-DD');
+    let navigate = useNavigate();
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -75,7 +77,7 @@ const ProfileSettings = ({ id }) => {
                     <input type='password' value={password} name='password' onChange={(e) => setPassword(e.target.value)} />
 
                     <button type='submit'>Edit</button>
-                    <button>Cancel</button>
+                    <button onClick={() => navigate('/loginsuccess')}>Cancel</button>
                 </form>
             </section>
         )
