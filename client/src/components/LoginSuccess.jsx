@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LoginSuccess = ({ id, name }) => {
+const LoginSuccess = ({ id, firstName }) => {
 
   // const { id, first_name } = useParams();
   // console.log(id);
   // console.log(first_name)
   console.log('id:' + id);
-  console.log('name:' + name);
+  console.log('name:' + firstName);
 
   return (
     <section className='login-success'>

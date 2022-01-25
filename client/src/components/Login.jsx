@@ -3,7 +3,7 @@ import axios from 'axios';
 import LoginSuccess from './LoginSuccess';
 import Error from './Error';
 
-const Login = ({ id, setId, name, setName }) => {
+const Login = ({ id, setId, firstName, setFirstName }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [data, setData] = useState(null)
@@ -25,7 +25,7 @@ const Login = ({ id, setId, name, setName }) => {
                 (result) => {
                     console.log(result.data);
                     setId(result.data.id);
-                    setName(result.data.first_name);
+                    setFirstName(result.data.firstName);
                     setIsLoggedIn(true)
                 },
                 (error) => {
@@ -38,7 +38,7 @@ const Login = ({ id, setId, name, setName }) => {
     if (error) {
         return <Error errorMessage={error.message} />;
     } else if (isLoggedIn) {
-        return <LoginSuccess id={id} name={name} />
+        return <LoginSuccess id={id} firstName={firstName} />
     }
 
     return (

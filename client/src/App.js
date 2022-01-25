@@ -13,7 +13,7 @@ import Header from './components/Header';
 
 const App = () => {
   const [id, setId] = useState(0);
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [likedUsers, setLikedUsers] = useState([]);
 
   return (
@@ -23,9 +23,9 @@ const App = () => {
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login id={id} setId={setId} name={name} setName={setName} />} />
+            <Route path='/login' element={<Login id={id} setId={setId} firstName={firstName} setFirstName={setFirstName} />} />
             <Route path='/signup' element={<SignUp />} />
-            <Route path='/loginsuccess' element={<LoginSuccess id={id} name={name} />} />
+            <Route path='/loginsuccess' element={<LoginSuccess id={id} firstName={firstName} />} />
             <Route path='/signupsuccess' element={<SignUpSuccess />} />
             <Route path='/match' element={<Matching id={id} likedUsers={likedUsers} setLikedUsers={setLikedUsers} />} />
             <Route path='/conversations' element={<Conversations id={id} likedUsers={likedUsers} />} />

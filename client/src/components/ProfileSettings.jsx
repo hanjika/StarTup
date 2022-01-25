@@ -11,7 +11,7 @@ const ProfileSettings = ({ id }) => {
     const [photo, setPhoto] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
-    
+
     useEffect(() => {
         axios.get('http://localhost:3000/api/users/' + id).then(
             (result) => {
@@ -40,23 +40,23 @@ const ProfileSettings = ({ id }) => {
                 <img src={photo} alt='profile-image'></img>
                 <form className='form-profile-settings'>
                     <label for='photo'><b>Change Photo</b></label>
-                    <input type='text' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
+                    <input type='text' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)} />
 
-                    <label for='first-name' className='required'><b>First Name</b></label>
-                    <input type='text' value={firstName} name='first-name' required onChange={(e) => setFirstName(e.target.value)}></input>
+                    <label for='firstName' className='required'><b>First Name</b></label>
+                    <input type='text' value={firstName} name='firstName' required onChange={(e) => setFirstName(e.target.value)} />
 
-                    <label for='last-name' className='required'><b>Last Name</b></label>
-                    <input type='text' value={lastName} name='last-name' required onChange={(e) => setLastName(e.target.value)}></input>
+                    <label for='lastName' className='required'><b>Last Name</b></label>
+                    <input type='text' value={lastName} name='lastName' required onChange={(e) => setLastName(e.target.value)} />
 
 
                     <label for='birthdate' className='required'><b>Birthdate</b></label>
-                    <input type='date' max={today} value={birthdate} name='birthdate' required onChange={(e) => setBirthdate(e.target.value)}></input>
+                    <input type='date' max={today} value={birthdate} name='birthdate' required onChange={(e) => setBirthdate(e.target.value)} />
 
                     <label for='motto'><b>Personal Motto</b></label>
-                    <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
+                    <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)} />
 
-                    <button type='submit'>Edit</button>  
-                    <button>Cancel</button>  
+                    <button type='submit'>Edit</button>
+                    <button>Cancel</button>
                 </form>
             </section>
         )
