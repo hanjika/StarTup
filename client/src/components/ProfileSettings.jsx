@@ -35,7 +35,7 @@ const ProfileSettings = ({ id }) => {
         return <p>Loading...</p>;
     } else {
         return (
-            <section className='profile-settings-section'>
+            <section className='section-profile-settings'>
                 <h2>Profile Settings</h2>
                 <img src={photo} alt='profile-image'></img>
                 <form className='form-profile-settings'>

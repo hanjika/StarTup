@@ -3,8 +3,8 @@ import moment from 'moment';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
-import SignUpSuccess from './SignUpSuccess';
 import { Link } from 'react-router-dom'
+import SignUpSuccess from './SignUpSuccess';
 
 const SignUp = () => {
     const today = moment(new Date()).format('YYYY-MM-DD');
@@ -29,14 +29,15 @@ const SignUp = () => {
     const handleSignupSubmit = (e) => {
         e.preventDefault();
         const newUser = {
-            userId: uuid(),
+            id: uuid(),
             firstName: firstName,
             lastName: lastName,
             email: email,
             password: password,
             birthdate: birthdate,
             motto: motto,
-            starsign: getSign(birthdate)
+            starsign: getSign(birthdate),
+            photo: photo
         }
         setData(newUser);
     }
@@ -45,14 +46,11 @@ const SignUp = () => {
         if (data) {
             axios.post('http://localhost:3000/signup/', data).then(
                 (result) => {
-                    console.log(result);
+                    console.log(result.data)
                     setIsRegister(true)
-
                 },
                 (error) => {
-                    alert(error);
-                    console.log(error);
-                    return <Error errorMessage={error.message} />;
+                    setError(error);
                 }
             )
         }
@@ -61,7 +59,7 @@ const SignUp = () => {
 
     if (error) {
         return <Error errorMessage={error.message} />;
-    } else if (isRegister === true) {
+    } else if (isRegister) {
         return <SignUpSuccess />
     }
 
@@ -90,9 +88,10 @@ const SignUp = () => {
                 <label for='motto'><b>Personal Motto</b></label>
                 <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)}></input>
 
-                <button>
-                    <Link to={'/signupsuccess'}>Log In</Link>
-                </button>
+                <label for='photo'><b>Attach Photo URL</b></label>
+                <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
+
+                <button type='submit'>Sign up</button>
 
             </form>
         </section>
