@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from './Header';
 import logo from '../images/startup-logo-colour.png';
 
 const Home = () => {
@@ -11,7 +10,7 @@ const Home = () => {
                 <div className='homepage-first-view'>
                     <img src={logo} alt='StarTup-logo' className='logo'></img>
                     <div className='homepage-text'>
-                    <p><b>Find your <em>entrepreneurial match</em> based on <em>astrology</em></b></p>
+                        <p><b>Find your <em>entrepreneurial match</em> based on <em>astrology</em></b></p>
                         <Link to={'/signup'} className='signup-link'>
                             <button>Sign up</button>
                         </Link>

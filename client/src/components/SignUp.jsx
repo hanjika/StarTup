@@ -71,11 +71,11 @@ const SignUp = () => {
         <section className='section-signup'>
             <form className='form-signup' onSubmit={handleSignupSubmit}>
                 <h2>Sign Up</h2>
-                <label for='first-name' className='required'><b>First Name</b></label>
-                <input type='text' value={firstName} name='first-name' required onChange={(e) => setFirstName(e.target.value)}></input>
+                <label for='firstName' className='required'><b>First Name</b></label>
+                <input type='text' value={firstName} name='firstName' required onChange={(e) => setFirstName(e.target.value)}></input>
 
-                <label for='last-name' className='required'><b>Last Name</b></label>
-                <input type='text' value={lastName} name='last-name' required onChange={(e) => setLastName(e.target.value)}></input>
+                <label for='lastName' className='required'><b>Last Name</b></label>
+                <input type='text' value={lastName} name='lastName' required onChange={(e) => setLastName(e.target.value)}></input>
 
                 <label for='email' className='required'><b>Email</b></label>
                 <input type='email' value={email} name='email' required onChange={(e) => setEmail(e.target.value)}></input>
