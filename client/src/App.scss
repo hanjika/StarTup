@@ -9,6 +9,10 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
+body {
+  background-color: $teal;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -45,7 +49,7 @@ header {
       position: fixed;
       right: 0;
       top: 15vh;
-      z-index: 1;
+      z-index: 2;
 
       @media (min-width: $desktop) {
         width: 20vw;
@@ -105,6 +109,8 @@ header {
 }
 
 .homepage {
+  background-color: white;
+  height: 100vh;
   main {
     @include centeredFlexColumn;
 
@@ -159,7 +165,6 @@ header {
           background-color: $yellow;
           color: black;
           border: none;
-          // border-radius: 25px;
           padding: 10px;
         }
 
@@ -177,6 +182,12 @@ header {
     width: 60vw;
     border-radius: 50%;
     transform: translateY(24vh);
+    @media (min-width: $small-mobile) and (max-width: #{$medium-mobile + 1px}) {
+      transform: translateY(27vh);
+    }
+    @media (max-width: $small-mobile) {
+      transform: translateY(30vh);
+    }
     @media (min-width: $desktop) {
       width: 20vw;
       transform: translateY(5vh);
@@ -190,12 +201,13 @@ header {
     content:' *';
     color: red;
   }
+}
 
+.form-login,
+.form-signup,
+.form-profile-settings {
   input {
-    width: 40vw;
-    @media (min-width: $desktop) {
-      width: 15vw;
-    }
+    @include inputStyle;
   }
 }
 
@@ -213,10 +225,21 @@ header {
   }
 }
 
-.profile-settings-section {
-  img {
-    height: 10vh;
+.section-profile-settings {
+  .profile-photo {
+    height: 20vh;
+    width: 20vh;
+    object-fit: cover;
     border-radius: 50%;
+    margin-bottom: 5vh;
+    @media (min-width: $desktop) {
+      height: 20vw;
+      width: 20vw;
+    }
+  }
+
+  .form-profile-settings {
+    padding-bottom: 5vh;
   }
 }
 
@@ -277,7 +300,7 @@ header {
     background-size: cover;
     background-position: center;
     box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.3);
-    z-index: 1;
+    // z-index: 1;
     @media (min-width: $desktop) {
       width: 20vw;
       height: 60vh;

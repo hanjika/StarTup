@@ -17,18 +17,21 @@
     // color: black;
     // border: none;
     // // border-radius: 25px;
-    width: 40vw;
+    width: 70vw;
     // padding: 10px;
     margin-top: 5vh;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     @media (min-width: $desktop) {
-        width: 15vw;
+        width: 20vw;
         border-radius: 8px;
     }
 }
 
 @mixin inputStyle {
-
+    width: 70vw;
+    @media (min-width: $desktop) {
+        width: 20vw;
+    }
 }

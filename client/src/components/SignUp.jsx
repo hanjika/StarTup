@@ -8,8 +8,8 @@ import SignUpSuccess from './SignUpSuccess';
 
 const SignUp = () => {
     const today = moment(new Date()).format('YYYY-MM-DD');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [first_name, setFirstName] = useState('');
+    const [last_name, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
@@ -30,8 +30,8 @@ const SignUp = () => {
         e.preventDefault();
         const newUser = {
             id: uuid(),
-            firstName: firstName,
-            lastName: lastName,
+            first_name: first_name,
+            last_name: last_name,
             email: email,
             password: password,
             birthdate: birthdate,
@@ -72,10 +72,10 @@ const SignUp = () => {
             <form className='form-signup' onSubmit={handleSignupSubmit}>
                 <h2>Sign Up</h2>
                 <label for='firstName' className='required'><b>First Name</b></label>
-                <input type='text' value={firstName} name='firstName' required onChange={(e) => setFirstName(e.target.value)}></input>
+                <input type='text' value={first_name} name='first_name' required onChange={(e) => setFirstName(e.target.value)}></input>
 
                 <label for='lastName' className='required'><b>Last Name</b></label>
-                <input type='text' value={lastName} name='lastName' required onChange={(e) => setLastName(e.target.value)}></input>
+                <input type='text' value={last_name} name='last_name' required onChange={(e) => setLastName(e.target.value)}></input>
 
                 <label for='email' className='required'><b>Email</b></label>
                 <input type='email' value={email} name='email' required onChange={(e) => setEmail(e.target.value)}></input>

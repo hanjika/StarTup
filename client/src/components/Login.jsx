@@ -25,7 +25,7 @@ const Login = ({ id, setId, firstName, setFirstName }) => {
                 (result) => {
                     console.log(result.data);
                     setId(result.data.id);
-                    setFirstName(result.data.firstName);
+                    setFirstName(result.data.first_name);
                     setIsLoggedIn(true)
                 },
                 (error) => {

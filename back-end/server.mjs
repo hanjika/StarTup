@@ -38,15 +38,15 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
-app.post('/login', async (req, res, next) => {
+app.post('/api/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email)
     if (user.email && user.password) {
         res.json({
             id: user.id,
         })
         req.session.email = req.body.email
-        req.session.firstName = user.firstName
-        req.session.lastName = user.lastName
+        req.session.first_name = user.first_name
+        req.session.last_name = user.last_name
         req.session.birthdate = user.birthdate
         req.session.motto = user.motto
         req.session.photo = user.photo
