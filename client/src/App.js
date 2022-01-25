@@ -1,6 +1,6 @@
 import './App.scss';
 import { React, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
@@ -18,8 +18,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header id={id} />
+      <Router>
+      <Header id={id} />
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -32,7 +32,7 @@ const App = () => {
             <Route path='/profilesettings' element={<ProfileSettings id={id} />} />
           </Routes>
         </main>
-      </BrowserRouter>
+      </Router>
     </div>
   )
 }
