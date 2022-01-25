@@ -18,16 +18,11 @@ const port = process.env.port || 3000
 const path = __dirname + '/build/'
 const app = express()
 
+app.set('trust proxy', 1)
 app.use(session({
     secret: 'secret',
     resave: false,
-    saveUninitialized: true,
-    email: '',
-    first_name: '',
-    cookie: {
-        secure: true,
-        maxAge: 1000 * 60 * 60 * 24
-    }
+    saveUninitialized: true
 }))
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json())
@@ -43,14 +38,22 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
-app.post('/api/login', async (req, res, next) => {
+app.post('/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email)
-    console.log(user.email)
     if (user.email && user.password) {
         res.json({
             id: user.id,
-            first_name: user.first_name
         })
+        req.session.email = req.body.email
+        req.session.firstName = user.firstName
+        req.session.lastName = user.lastName
+        req.session.birthdate = user.birthdate
+        req.session.motto = user.motto
+        req.session.photo = user.photo
+        req.session.password = user.password
+
+        req.session.save()
+        console.log(req.session)
     } else {
         res.send('There was a problem')
     }
@@ -63,8 +66,8 @@ app.post('/api/signup', async (req, res, next) => {
         "id": `${req.body.id}`,
         "email": `${req.body.email}`,
         "password": `${req.body.password}`,
-        "first_name": `${req.body.first_name}`,
-        "last_name": `${req.body.last_name}`,
+        "firstName": `${req.body.first_name}`,
+        "lastName": `${req.body.last_name}`,
         "birthdate": `${req.body.birthdate}`,
         "motto": `${req.body.motto}`,
         "starsign": `${req.body.starsign}`,
@@ -82,7 +85,9 @@ app.post('/api/signup', async (req, res, next) => {
         console.log('New data added')
     })
 })
-
+app.get('/login/connect', (req, res) => {
+    res.status(200).json(req.session)
+})
 
 app.listen(port)
 console.log('Server started at http://localhost:' + port)

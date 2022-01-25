@@ -27,7 +27,7 @@ const UserForMatch = ({ user }) => {
         //     setLiked();
         // }
     }
-    
+
     const onCardLeftScreen = (myIdentifier) => {
         console.log(myIdentifier + ' left the screen')
     }
@@ -40,7 +40,7 @@ const UserForMatch = ({ user }) => {
                     <h4>{user.starsign}</h4>
                     <p>{user.motto}</p>
                 </div>
-                
+           
             </div>
             {/* <h3>{user.first_name}</h3>
                 <h4>{user.starsign}</h4>
