@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import axios from 'axios';
+import blankProfileImage from '../images/blank-profile-picture.jpg';
 
 const UserForMatch = ({ user }) => {
     // const [liked, setLiked] = useState(null);
@@ -34,13 +35,17 @@ const UserForMatch = ({ user }) => {
 
     return (
         <TinderCard className='swiper' onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['up', 'down']}>
-            <div style={{backgroundImage: `url(${user.photo})`}} className='user-card'>
+            <div className='user-card' style={user.photo === '' ? (
+                {backgroundImage: `url(${blankProfileImage})`}
+            ) : (
+                {backgroundImage: `url(${user.photo})`}
+            )}>
+            {/* <div style={{backgroundImage: `url(${user.photo})`}} className='user-card'></div> */}
                 <div className='user-details'>
                     <h3>{user.first_name}</h3>
                     <h4>{user.starsign}</h4>
                     <p>{user.motto}</p>
                 </div>
-           
             </div>
             {/* <h3>{user.first_name}</h3>
                 <h4>{user.starsign}</h4>
