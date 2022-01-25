@@ -7,7 +7,9 @@
         "lastName": "Richet",
         "birthdate": "03-03-1999",
         "motto": "my motto",
-        "starsign": "pisces"
+        "starsign": "pisces",
+        "photo":"https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80", 
+        "liked_user_ids":[]
     },
     {
         "id": 2,
@@ -17,7 +19,9 @@
         "lastName": "Masanjika",
         "birthdate": "16-10-1996",
         "motto": "my motto 2",
-        "starsign": "libra"
+        "starsign": "libra",
+        "photo":"https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=368&q=80",
+        "liked_user_ids":[]
     },
     {
         "id": "26eeb5c-046-f021-403b-6d4dfe0a04a",
@@ -28,7 +32,8 @@
         "birthdate": "1990-07-19",
         "motto": "Nothing is impossible",
         "starsign": "cancer",
-        "photo": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
+        "photo": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+        "liked_user_ids":[]
     },
     {
         "id": "e42040a-185-1d3d-5ce0-87e13b856e60",
@@ -39,6 +44,7 @@
         "birthdate": "2022-01-25",
         "motto": "john",
         "starsign": "aquarius",
-        "photo": ""
+        "photo": "",
+        "liked_user_ids":[]
     }
 ]

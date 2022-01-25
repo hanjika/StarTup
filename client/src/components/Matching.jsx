@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Error from './Error';
 import UserForMatch from './UserForMatch';
+import SwipeButtons from './SwipeButtons';
 
 const Matching = ({ id, likedUsers, setLikedUsers }) => {
   const [error, setError] = useState(null);
@@ -29,10 +30,12 @@ const Matching = ({ id, likedUsers, setLikedUsers }) => {
   } else {
     return (
         <section className='section-matching'>
-            <h2>There are {otherUsers.length} other users to match with</h2>
-            {otherUsers.map(user => (
-                <UserForMatch user={user} />
-            ))}
+            <div className='matching-cards-container'>
+                {otherUsers.map(user => (
+                    <UserForMatch key={user.id} user={user} />
+                ))}
+            </div>
+            <SwipeButtons />
         </section>
     )
   }
