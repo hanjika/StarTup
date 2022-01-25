@@ -3,7 +3,10 @@ import moment from 'moment';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
+=======
+>>>>>>> 879a6e8ae84eedc1be6abd0302dab2c8a933a249
 import SignUpSuccess from './SignUpSuccess';
 
 const SignUp = () => {
@@ -44,7 +47,7 @@ const SignUp = () => {
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/signup/', data).then(
+            axios.post('http://localhost:3000/api/signup/', data).then(
                 (result) => {
                     console.log(result.data)
                     setIsRegister(true)
@@ -92,9 +95,8 @@ const SignUp = () => {
                 <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
 
                 <button type='submit'>Sign up</button>
-
-            </form>
-        </section>
+            </form >
+        </section >
     )
 }
 
