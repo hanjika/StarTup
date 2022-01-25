@@ -15,18 +15,18 @@ const NavLinks = ({ setHamburgerOpen, id }) => {
                 </>
             ) : (
                 <>
-                <li>
-                    <Link to={'/match'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Start Matching</Link>
-                </li>
-                <li>
-                    <Link to={'/conversations'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Matches</Link>
-                </li>
-                <li>
-                    <Link to={'/profilesettings'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Profile Settings</Link>
-                </li>
-                <li>
-                    <Link to={'/logout'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Logout</Link>
-                </li>
+                    <li>
+                        <Link to={'/match'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Start Matching</Link>
+                    </li>
+                    <li>
+                        <Link to={'/conversations'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Matches</Link>
+                    </li>
+                    <li>
+                        <Link to={'/profilesettings'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Profile Settings</Link>
+                    </li>
+                    <li>
+                        <Link to={'/'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Logout</Link>
+                    </li>
                 </>
             )}
         </ul>

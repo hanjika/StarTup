@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LogoutButton from './LogoutButton';
 
 const SignUpSuccess = () => {
-  return (
+    return (
         <section className='signup-success'>
             <h2>Welcome!</h2>
             <p>You are now a member</p>
@@ -13,7 +12,9 @@ const SignUpSuccess = () => {
             <Link to={'/profilesettings'}>
                 <button>Profile settings</button>
             </Link>
-            <LogoutButton />
+            <Link to={'/'}>
+                <button>Logout</button>
+            </Link>
         </section>
     )
 };

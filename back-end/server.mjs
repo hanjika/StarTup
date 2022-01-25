@@ -43,7 +43,6 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
-//login
 app.post('/api/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email)
     console.log(user.email)
@@ -57,21 +56,8 @@ app.post('/api/login', async (req, res, next) => {
     }
 })
 
-app.post('/api/login', async (req, res, next) => {
-    let user = users.find(user => user.email == req.body.email)
-    console.log(user.email)
-    if (user.email && user.password) {
-        res.json({
-            id: user.id,
-            first_name: user.first_name
-        })
-    } else {
-        res.send('There was a problem')
-    }
-})
-
-app.post('/api/signup', async (req, res, next) => {
-    var data = fs.readFileSync("users.json")
+app.post('/signup', async (req, res, next) => {
+    var data = fs.readFileSync('users.json')
     var dataUser = JSON.parse(data)
     let newUser = {
         "id": `${req.body.id}`,

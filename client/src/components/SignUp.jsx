@@ -3,6 +3,7 @@ import moment from 'moment';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
+import { Link } from 'react-router-dom'
 import SignUpSuccess from './SignUpSuccess';
 
 const SignUp = () => {
@@ -29,8 +30,8 @@ const SignUp = () => {
         e.preventDefault();
         const newUser = {
             id: uuid(),
-            first_name: firstName,
-            last_name: lastName,
+            firstName: firstName,
+            lastName: lastName,
             email: email,
             password: password,
             birthdate: birthdate,
@@ -46,9 +47,8 @@ const SignUp = () => {
         if (data) {
             axios.post('http://localhost:3000/api/signup/', data).then(
                 (result) => {
-                    console.log(result);
+                    console.log(result.data)
                     setIsRegister(true)
-
                 },
                 (error) => {
                     setError(error);
@@ -60,7 +60,10 @@ const SignUp = () => {
 
     if (error) {
         return <Error errorMessage={error.message} />;
-    } else if (isRegister === true) {
+    } else if (isRegister) {
+        return <SignUpSuccess />
+    }
+    if (isRegister) {
         return <SignUpSuccess />
     }
 
@@ -92,9 +95,13 @@ const SignUp = () => {
                 <label for='photo'><b>Attach Photo URL</b></label>
                 <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
 
-                <button type='submit'>Sign Up</button>
-            </form>
-        </section>
+                <Link to={'/signupsuccess'}>
+                    <button type='submit'>Sign up</button>
+                </Link>
+
+
+            </form >
+        </section >
     )
 }
 

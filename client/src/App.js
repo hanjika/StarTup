@@ -8,7 +8,6 @@ import LoginSuccess from './components/LoginSuccess';
 import Matching from './components/Matching';
 import Conversations from './components/Conversations';
 import SignUpSuccess from './components/SignUpSuccess';
-import Api from './components/Api';
 import ProfileSettings from './components/ProfileSettings';
 import Header from './components/Header';
 
@@ -31,7 +30,6 @@ const App = () => {
             <Route path='/match' element={<Matching id={id} likedUsers={likedUsers} setLikedUsers={setLikedUsers} />} />
             <Route path='/conversations' element={<Conversations id={id} likedUsers={likedUsers} />} />
             <Route path='/profilesettings' element={<ProfileSettings id={id} />} />
-            <Route path='/api/login' exact element={<Api />} />
           </Routes>
         </main>
       </Router>
