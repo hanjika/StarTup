@@ -36,7 +36,8 @@ const SignUp = () => {
             birthdate: birthdate,
             motto: motto,
             starsign: getSign(birthdate),
-            photo: photo
+            photo: photo,
+            liked_user_ids: []
         }
         setData(newUser);
     }

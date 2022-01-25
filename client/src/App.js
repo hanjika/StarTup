@@ -1,6 +1,6 @@
 import './App.scss';
 import { React, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <Header id={id} />
         <main>
           <Routes>
@@ -34,7 +34,7 @@ const App = () => {
             <Route path='/api/login' exact element={<Api />} />
           </Routes>
         </main>
-      </BrowserRouter>
+      </Router>
     </div>
   )
 }
