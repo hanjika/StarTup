@@ -3,10 +3,7 @@ import moment from 'moment';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom'
-=======
->>>>>>> 879a6e8ae84eedc1be6abd0302dab2c8a933a249
 import SignUpSuccess from './SignUpSuccess';
 
 const SignUp = () => {
@@ -65,6 +62,9 @@ const SignUp = () => {
     } else if (isRegister) {
         return <SignUpSuccess />
     }
+    if (isRegister) {
+        return <SignUpSuccess />
+    }
 
     return (
         <section className='section-signup'>
@@ -94,7 +94,11 @@ const SignUp = () => {
                 <label for='photo'><b>Attach Photo URL</b></label>
                 <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
 
-                <button type='submit'>Sign up</button>
+                <Link to={'/signupsuccess'}>
+                    <button type='submit'>Sign up</button>
+                </Link>
+
+
             </form >
         </section >
     )
