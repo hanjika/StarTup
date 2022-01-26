@@ -13,6 +13,10 @@ body {
   background-color: $teal;
 }
 
+button {
+  @include buttonStyle;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -346,6 +350,11 @@ header {
   }
 }
 
-button {
-  @include buttonStyle;
+.section-conversations {
+  margin: 5vw;
+  ul {
+    color: white;
+    height: 60vh;
+    width: 80vw;
+  }
 }
