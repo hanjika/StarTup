@@ -66,12 +66,13 @@ app.post('/api/signup', async (req, res, next) => {
         "id": `${req.body.id}`,
         "email": `${req.body.email}`,
         "password": `${req.body.password}`,
-        "firstName": `${req.body.first_name}`,
-        "lastName": `${req.body.last_name}`,
+        "first_name": `${req.body.first_name}`,
+        "last_name": `${req.body.last_name}`,
         "birthdate": `${req.body.birthdate}`,
         "motto": `${req.body.motto}`,
         "starsign": `${req.body.starsign}`,
-        "photo": `${req.body.photo}`
+        "photo": `${req.body.photo}`,
+        "liked_user_ids": `${req.body.liked_user_ids}`
     }
     dataUser.push(newUser)
     var newDataUser = JSON.stringify(dataUser)

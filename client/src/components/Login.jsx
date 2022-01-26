@@ -38,7 +38,7 @@ const Login = ({ id, setId, firstName, setFirstName }) => {
     if (error) {
         return <Error errorMessage={error.message} />;
     } else if (isLoggedIn) {
-        return <LoginSuccess id={id} firstName={firstName} />
+        return <LoginSuccess id={id} firstName={firstName} />;
     }
 
     return (

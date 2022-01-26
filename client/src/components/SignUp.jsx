@@ -80,7 +80,7 @@ const SignUp = () => {
                 <label for='email' className='required'><b>Email</b></label>
                 <input type='email' value={email} name='email' required onChange={(e) => setEmail(e.target.value)}></input>
 
-                <label for='password' className='required'><b>Choose Password</b></label>
+                <label for='password' className='required'><b>Password</b></label>
                 <input type='password' value={password} name='password' required onChange={(e) => setPassword(e.target.value)}></input>
 
                 <label for='passwordRepeat' className='required'><b>Confirm Password</b></label>

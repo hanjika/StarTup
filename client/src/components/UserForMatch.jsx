@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import blankProfileImage from '../images/blank-profile-picture.jpg';
 
-const UserForMatch = ({ user }) => {
+const UserForMatch = ({ user, count, setCount }) => {
+    let navigate = useNavigate();
     // const [liked, setLiked] = useState(null);
 
     // useEffect(() => {
@@ -23,7 +25,13 @@ const UserForMatch = ({ user }) => {
     // }, [liked]);
 
     const onSwipe = (direction) => {
-        console.log('You swiped: ' + direction)
+        console.log('You swiped: ' + direction);
+        console.log(count)
+        setCount(count - 1);
+        console.log(count)
+        if (count === 1) {
+            navigate('/match');
+        }
         // if (direction === 'right') {
         //     setLiked();
         // }
