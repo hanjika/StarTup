@@ -23,7 +23,6 @@ const Login = ({ id, setId, firstName, setFirstName }) => {
         if (data) {
             axios.post('http://localhost:3000/api/login', data).then(
                 (result) => {
-                    console.log(result.data);
                     setId(result.data.id);
                     setFirstName(result.data.first_name);
                     setIsLoggedIn(true)
