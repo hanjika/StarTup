@@ -1,6 +1,6 @@
 import './App.scss';
 import { React, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
@@ -18,21 +18,21 @@ const App = () => {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header id={id} />
+      <Router>
+      <Header id={id} />
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login id={id} setId={setId} firstName={firstName} setFirstName={setFirstName} />} />
             <Route path='/signup' element={<SignUp />} />
-            <Route path='/loginsuccess' element={<LoginSuccess id={id} firstName={firstName} />} />
+            <Route path='/loginsuccess' element={<LoginSuccess />} />
             <Route path='/signupsuccess' element={<SignUpSuccess />} />
             <Route path='/match' element={<Matching id={id} likedUsers={likedUsers} setLikedUsers={setLikedUsers} />} />
             <Route path='/conversations' element={<Conversations id={id} likedUsers={likedUsers} />} />
             <Route path='/profilesettings' element={<ProfileSettings id={id} />} />
           </Routes>
         </main>
-      </BrowserRouter>
+      </Router>
     </div>
   )
 }

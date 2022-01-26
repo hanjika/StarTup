@@ -8,6 +8,8 @@ import messagesRouter from './routes/messagesRouter.mjs'
 
 const require = createRequire(import.meta.url);
 const users = require('./users.json')
+const messages = require('./messages.json')
+
 const express = require("express")
 const cors = require('cors')
 const fs = require('fs')
@@ -40,18 +42,24 @@ app.get('/', function (req, res) {
 
 app.post('/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email)
+    let message = messages.find(message => message.email == req.body.email)
     if (user.email && user.password) {
         res.json({
             id: user.id,
         })
         req.session.email = req.body.email
-        req.session.firstName = user.firstName
-        req.session.lastName = user.lastName
+        req.session.first_name = user.first_name
+        req.session.last_name = user.last_name
         req.session.birthdate = user.birthdate
         req.session.motto = user.motto
         req.session.photo = user.photo
         req.session.password = user.password
+        req.session.conversations = []
 
+        message.conversations.forEach(elem =>
+            req.session.conversations.push(elem)
+
+        )
         req.session.save()
         console.log(req.session)
     } else {
@@ -61,6 +69,7 @@ app.post('/login', async (req, res, next) => {
 
 app.post('/signup', async (req, res, next) => {
     var data = fs.readFileSync('users.json')
+    console.log(data)
     var dataUser = JSON.parse(data)
     let newUser = {
         "id": `${req.body.id}`,
@@ -76,11 +85,7 @@ app.post('/signup', async (req, res, next) => {
     dataUser.push(newUser)
     var newDataUser = JSON.stringify(dataUser)
     console.log(JSON.parse(newDataUser))
-    fs.unlink('users.json', function (err) {
-        if (err) throw err
-        console.log('File removed')
-    })
-    fs.writeFile('users.json', newDataUser, (err) => {
+    fs.writeFileSync('users.json', newDataUser, (err) => {
         if (err) throw err
         console.log('New data added')
     })

@@ -1,18 +1,55 @@
 [
     {
-        "id": "1",
         "email": "shanon.richet@gmail.com",
-        "messages": [
+        "conversations": [
             {
-                "conversationId": "1",
-                "message": [
+                "friendName": "Hanna",
+                "friendEmail": "hanna.masanjika@gmail.com",
+                "messages": [
                     {
                         "author": "shanon.richet@gmail.com",
+                        "authorName": "Shanon",
                         "content": "How is going?",
                         "date": "19-01-2022"
                     },
                     {
                         "author": "hanna.masanjika@gmail.com",
+                        "authorName": "Hanna",
+                        "content": "Salut",
+                        "date": "18-01-2022"
+                    }
+                ]
+            },
+            {
+                "friendName": "James",
+                "friendEmail": "jamesmd@gmail.com",
+                "messages": [
+                    {
+                        "author": "jamesmd@gmail.com",
+                        "authorName": "James",
+                        "content": "Are you there?",
+                        "date": "15-01-2022"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "email": "hanna.masanjika@gmail.com",
+        "conversations": [
+            {
+                "friendName": "Shanon",
+                "friendEmail": "shanon.richet@gmail.com",
+                "messages": [
+                    {
+                        "author": "shanon.richet@gmail.com",
+                        "authorName": "Shanon",
+                        "content": "How is going?",
+                        "date": "19-01-2022"
+                    },
+                    {
+                        "author": "hanna.masanjika@gmail.com",
+                        "authorName": "Hanna",
                         "content": "Salut",
                         "date": "18-01-2022"
                     }
@@ -21,21 +58,17 @@
         ]
     },
     {
-        "id": "2",
-        "email": "hanna.masanjika@gmail.com",
-        "messages": [
+        "email": "john@gmail.com",
+        "conversations": [
             {
-                "conversationId": "1",
+                "friendName": "Shanon",
+                "friendEmail": "shanon.richet@gmail.com",
                 "messages": [
                     {
-                        "author": "shanon.richet@gmail.com",
-                        "content": "How is going?",
-                        "date": "19-01-2022"
-                    },
-                    {
-                        "author": "hanna.masanjika@gmail.com",
-                        "content": "Salut",
-                        "date": "18-01-2022"
+                        "author": "john@gmail.com",
+                        "authorName": "John",
+                        "content": "Are you there?",
+                        "date": "15-01-2022"
                     }
                 ]
             }

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
+import Error from './Error';
+import blankProfileImage from '../images/blank-profile-picture.jpg';
 
 const ProfileSettings = ({ id }) => {
     const today = moment(new Date()).format('YYYY-MM-DD');
+    let navigate = useNavigate();
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -19,8 +23,8 @@ const ProfileSettings = ({ id }) => {
         axios.get('http://localhost:3000/login/connect').then(
             (result) => {
                 console.log(result.data)
-                setFirstName(result.data.firstName)
-                setLastName(result.data.lastName)
+                setFirstName(result.data.first_name)
+                setLastName(result.data.last_name)
                 setBirthdate(result.data.birthdate)
                 setPhoto(result.data.photo)
                 setMotto(result.data.motto)
@@ -36,7 +40,7 @@ const ProfileSettings = ({ id }) => {
     }, []);
 
     if (error) {
-        return <p>Error: {error.message}</p>;
+        return <Error errorMessage={error.message} />;
     } else if (!isLoaded) {
         return <p>Loading...</p>;
     } else {
@@ -44,7 +48,12 @@ const ProfileSettings = ({ id }) => {
             <section className='section-profile-settings'>
                 <h2>Profile Settings</h2>
 
-                <img src={photo} className='profilPhoto' alt="selfie" />
+                {/* <div className='profile-photo' style={{backgroundImage: `url(${photo})`}}></div> */}
+                {photo === '' ? (
+                    <img src={blankProfileImage} className='profile-photo' alt="You" />
+                ) : (
+                    <img src={photo} className='profile-photo' alt="You" />
+                )}
                 <form className='form-profile-settings'>
                     <label for='photo'><b>Change Photo</b></label>
                     <input type='text' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)} />
@@ -68,7 +77,7 @@ const ProfileSettings = ({ id }) => {
                     <input type='password' value={password} name='password' onChange={(e) => setPassword(e.target.value)} />
 
                     <button type='submit'>Edit</button>
-                    <button>Cancel</button>
+                    <button onClick={() => navigate('/loginsuccess')}>Cancel</button>
                 </form>
             </section>
         )

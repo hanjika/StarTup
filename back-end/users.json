@@ -3,44 +3,36 @@
         "id": 1,
         "email": "shanon.richet@gmail.com",
         "password": "fnjk*",
-        "firstName": "Shanon",
-        "lastName": "Richet",
-        "birthdate": "1999-03-03",
+        "first_name": "Shanon",
+        "last_name": "Richet",
+        "birthdate": "03-03-1999",
         "motto": "my motto",
         "starsign": "pisces",
-        "photo": "https://media.istockphoto.com/photos/profil-portrait-of-beautiful-sporty-woman-outdoors-picture-id1286187442?b=1&k=20&m=1286187442&s=170667a&w=0&h=yHrlZBr8Us9x9JizwhRj5_a--m3IzeOAlkSLXPxoNRA="
+        "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+        "liked_user_ids": []
     },
     {
         "id": 2,
         "email": "hanna.masanjika@gmail.com",
         "password": "sdop8?",
-        "firstName": "Hanna",
-        "lastName": "Masanjika",
-        "birthdate": "1996-10-16",
+        "first_name": "Hanna",
+        "last_name": "Masanjika",
+        "birthdate": "16-10-1996",
         "motto": "my motto 2",
         "starsign": "libra",
-        "photo": "https://images.unsplash.com/photo-1566758564651-a38ec593a09e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
+        "photo": "https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=368&q=80",
+        "liked_user_ids": []
     },
     {
         "id": "26eeb5c-046-f021-403b-6d4dfe0a04a",
         "email": "jamesmd@gmail.com",
         "password": "jamesm1",
-        "firstName": "James",
-        "lastName": "McDonald",
+        "first_name": "James",
+        "last_name": "McDonald",
         "birthdate": "1990-07-19",
         "motto": "Nothing is impossible",
         "starsign": "cancer",
-        "photo": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
-    },
-    {
-        "id": "e42040a-185-1d3d-5ce0-87e13b856e60",
-        "email": "john@gmail.com",
-        "password": "john",
-        "firstName": "undefined",
-        "lastName": "undefined",
-        "birthdate": "2022-01-25",
-        "motto": "john",
-        "starsign": "aquarius",
-        "photo": ""
+        "photo": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+        "liked_user_ids": []
     }
 ]

@@ -9,6 +9,10 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
+body {
+  background-color: $teal;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -45,7 +49,7 @@ header {
       position: fixed;
       right: 0;
       top: 15vh;
-      z-index: 1;
+      z-index: 2;
 
       @media (min-width: $desktop) {
         width: 20vw;
@@ -105,6 +109,8 @@ header {
 }
 
 .homepage {
+  background-color: white;
+  height: 100vh;
   main {
     @include centeredFlexColumn;
 
@@ -159,7 +165,6 @@ header {
           background-color: $yellow;
           color: black;
           border: none;
-          // border-radius: 25px;
           padding: 10px;
         }
 
@@ -177,9 +182,15 @@ header {
     width: 60vw;
     border-radius: 50%;
     transform: translateY(24vh);
+    @media (min-width: $small-mobile) and (max-width: #{$medium-mobile + 1px}) {
+      transform: translateY(27vh);
+    }
+    @media (max-width: $small-mobile) {
+      transform: translateY(30vh);
+    }
     @media (min-width: $desktop) {
       width: 20vw;
-      transform: translateY(-20vh);
+      transform: translateY(5vh);
     }
   }
 }
@@ -190,12 +201,13 @@ header {
     content:' *';
     color: red;
   }
+}
 
+.form-login,
+.form-signup,
+.form-profile-settings {
   input {
-    width: 40vw;
-    @media (min-width: $desktop) {
-      width: 15vw;
-    }
+    @include inputStyle;
   }
 }
 
@@ -213,18 +225,124 @@ header {
   }
 }
 
-.profile-settings-section {
-  img {
-    height: 10vh;
+.section-profile-settings {
+  .profile-photo {
+    height: 20vh;
+    width: 20vh;
+    object-fit: cover;
     border-radius: 50%;
+    margin-bottom: 5vh;
+    @media (min-width: $desktop) {
+      height: 20vw;
+      width: 20vw;
+    }
+  }
+
+  .form-profile-settings {
+    padding-bottom: 5vh;
   }
 }
 
 .section-matching {
+  height: 80vh;
+  @media (min-width: $desktop) {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .matching-cards-container {
+    display: flex;
+    justify-content: center;
+    @media (min-width: $desktop) {
+      position: absolute;
+      top: 0;
+      left: 50vw;
+    }
+
+    .swiper {
+      position: absolute;
+      margin-top: 5vh;
+    }
+  }
+
+  .swipe-buttons {
+    position: fixed;
+    bottom: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    @media (min-width: $desktop) {
+      bottom: initial;
+      justify-content: space-around;
+      margin: 0;
+      transform: translateY(-5vh);
+    }
+
+    button {
+      width: 10vh;
+      height: 10vh;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.16);
+    }
+  }
+
   .user-card {
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-size: contain;
+    position: relative;
+    width: 70vw;
+    padding: 20px;
+    height: 40vh;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.3);
+    // z-index: 1;
+    @media (min-width: $desktop) {
+      width: 20vw;
+      height: 60vh;
+      padding-top: 0;
+      margin-top: 0;
+      margin-bottom: 5vh;
+    }
+
+    .user-details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 12vh;
+      background-color: white;
+      color: black;
+      border-radius: 0 0 20px 20px;
+      padding-top: 2vw;
+      @media (min-width: $desktop) {
+        width: 100%;
+        height: 10vh;
+        padding-top: 1vw;
+      }
+  
+
+      h4 {
+        text-transform: capitalize;
+        color: $teal;
+      }
+
+      p {
+        color: grey;
+        font-style: italic;
+      }
+    
+      > * {
+        margin: 0 0 0 2vw;
+        @media (min-width: $desktop) {
+          margin: 0 0 0 1vw;
+        }
+      }
+    }
   }
 }
 
