@@ -58,7 +58,6 @@ app.post('/login', async (req, res, next) => {
 
         message.conversations.forEach(elem =>
             req.session.conversations.push(elem)
-
         )
         req.session.save()
         console.log(req.session)
