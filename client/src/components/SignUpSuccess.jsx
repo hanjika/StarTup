@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SignUpSuccess = () => {
+const SignUpSuccess = ({data}) => {
+    console.log(data);
     return (
         <section className='signup-success'>
             <h2>Welcome!</h2>
