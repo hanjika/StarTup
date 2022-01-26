@@ -66,7 +66,7 @@ app.post('/login', async (req, res, next) => {
     }
 })
 
-app.post('/signup', async (req, res, next) => {
+app.post('/api/signup', async (req, res, next) => {
     var data = fs.readFileSync('users.json')
     console.log(data)
     var dataUser = JSON.parse(data)
