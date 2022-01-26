@@ -19,7 +19,7 @@ const NavLinks = ({ setHamburgerOpen, id }) => {
                         <Link to={'/match'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Start Matching</Link>
                     </li>
                     <li>
-                        <Link to={'/conversations'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Matches</Link>
+                        <Link to={'/conversations'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Conversations</Link>
                     </li>
                     <li>
                         <Link to={'/profilesettings'} onClick={() => setHamburgerOpen(false)} className='nav-link'>Profile Settings</Link>
