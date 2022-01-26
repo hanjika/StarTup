@@ -5,7 +5,6 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import usersRouter from './routes/usersRouter.mjs'
 import messagesRouter from './routes/messagesRouter.mjs'
-
 const require = createRequire(import.meta.url);
 const users = require('./users.json')
 const messages = require('./messages.json')
@@ -21,6 +20,7 @@ const path = __dirname + '/build/'
 const app = express()
 
 app.set('trust proxy', 1)
+
 app.use(session({
     secret: 'secret',
     resave: false,
@@ -40,7 +40,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
-app.post('/login', async (req, res, next) => {
+app.post('/api/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email)
     let message = messages.find(message => message.email == req.body.email)
     if (user.email && user.password) {
@@ -89,6 +89,7 @@ app.post('/api/signup', async (req, res, next) => {
         console.log('New data added')
     })
 })
+
 app.get('/login/connect', (req, res) => {
     res.status(200).json(req.session)
 })

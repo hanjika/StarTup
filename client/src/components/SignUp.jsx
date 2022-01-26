@@ -45,7 +45,7 @@ const SignUp = () => {
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/signup/', data).then(
+            axios.post('http://localhost:3000/api/signup', data).then(
                 (result) => {
                     console.log(result.data)
                     setIsRegister(true)
@@ -95,9 +95,7 @@ const SignUp = () => {
                 <label for='photo'><b>Attach Photo URL</b></label>
                 <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
 
-                <Link to={'/signupsuccess'}>
-                    <button type='submit'>Sign up</button>
-                </Link>
+                <button type='submit'>Sign up</button>
 
             </form >
         </section >
