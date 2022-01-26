@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
-import Message from './Message';
+import OpenConversation from './OpenConversation';
+import LastMessage from './LastMessage';
 
 const DisplayConversation = ({ id, conversation }) => {
     const [otherUserId, setOtherUserId] = useState(null);
@@ -35,15 +36,13 @@ const DisplayConversation = ({ id, conversation }) => {
         return <p>Loading...</p>;
     } else {
         return (
-            <li className='single-conversation'>
+            <li className='single-conversation' onClick={() => {
+                return <OpenConversation userId={id} conversation={conversation} otherUserData={otherUserData} />;
+            }}>
                 <img src={otherUserData.photo} alt={otherUserData.first_name}></img>
                 <div className='conversation-column'>
                     <p><b>{otherUserData.first_name}</b></p>
-                    <ul className='single-conversation-messages'>
-                        {conversation.messages.map(message => (
-                            <Message key={uuid()} userId={id} message={message} otherUserData={otherUserData} />
-                        ))}
-                    </ul>
+                    <LastMessage key={uuid()} userId={id} message={conversation.messages[conversation.messages.length-1]} otherUserData={otherUserData} />
                 </div>
             </li>
         )
