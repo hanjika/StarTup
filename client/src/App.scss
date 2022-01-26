@@ -36,15 +36,6 @@ header {
     z-index: 100;
   }
 
-  // .close-icon {
-  //   // position: fixed;
-  //   background-color: black;
-  //   height: 10vh;
-  //   // width: 100vw;
-  //   margin: 0;
-  //   padding: 0;
-  // }
-
   .header-nav {
     .nav-modal {
       background-color: white;
@@ -352,9 +343,40 @@ header {
 
 .section-conversations {
   margin: 5vw;
-  ul {
-    color: white;
+
+  .all-conversations {
+    margin: 0;
+    list-style-type: none;
     height: 60vh;
     width: 80vw;
+
+    .single-conversation {
+      display: flex;
+      background-color: white;
+      color: black;
+      border-radius: 10px;
+
+      img {
+        width: 10vh;
+        height: 10vh;
+        object-fit: cover;
+        border-radius: 50%;
+
+        @media (min-width: $desktop) {
+          width: 15vw;
+          height: 15vw;
+        }
+      }
+
+      .conversation-column {
+        display: flex;
+        flex-direction: column;
+
+        .single-conversation-messages {
+          list-style-type: none;
+          color: grey;
+        }
+      }
+    }
   }
 }

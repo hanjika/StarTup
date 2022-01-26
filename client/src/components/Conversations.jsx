@@ -8,28 +8,16 @@ const Conversations = ({ id }) => {
   const [allConversations, setAllConversations] = useState([]);
   const [userConversations, setUserConversations] = useState([]);
 
-  // const userOnlyConvos = () => {
-  //   {allConversations.map(conversation => {
-  //     console.log(conversation.userIds);
-  //     if (conversation.userIds.includes(id)) {
-  //       console.log(conversation)
-  //     }
-  //   })}
-  // }
-
   useEffect(() => {
     if (userConversations !== []) {
-      console.log(userConversations);
       setIsLoaded(true);
-      console.log(userConversations);
     }
   }, [userConversations]);
 
   useEffect(() => {
-    const array = allConversations.map(conversation => {
+    allConversations.map(conversation => {
       if (conversation.userIds.includes(id)) {
         setUserConversations(userConversations => [...userConversations, conversation]);
-        console.log(conversation.messages);
       }
     })
   }, [allConversations]);
@@ -38,7 +26,6 @@ const Conversations = ({ id }) => {
     axios.get('http://localhost:3000/api/messages/').then(
       (result) => {
         setAllConversations(result.data);
-        // userOnlyConvos();
       },
       (error) => {
         setIsLoaded(true);
@@ -55,13 +42,10 @@ const Conversations = ({ id }) => {
     return (
       <section className='section-conversations'>
           <h2>Your conversations</h2>
-          <p>You have {userConversations.length} conversations</p>
-          <ul>
-            <li>{userConversations}</li>
-            {userConversations.map(conversation => {
-              // console.log(conversation);
-              <DisplayConversation key={conversation.conversationId} convo={conversation} id={id} />
-            })}
+          <ul className='all-conversations'>
+            {userConversations.map(conversation => (
+              <DisplayConversation key={conversation.conversationId} conversation={conversation} id={id} />
+            ))}
           </ul>
       </section>
     )
