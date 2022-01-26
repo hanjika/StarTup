@@ -352,7 +352,7 @@ header {
     margin: 0;
     padding: 0;
     @media (min-width: $desktop) {
-      width: 60vw;
+      width: 50vw;
     }
 
     .single-conversation {
@@ -365,6 +365,9 @@ header {
       border-radius: 10px;
       margin-bottom: 5vh;
       cursor: pointer;
+      @media (min-width: $desktop) {
+        padding-left: 10vw;
+      }
 
       img {
         width: 13vh;
@@ -384,9 +387,18 @@ header {
         justify-content: space-evenly;
         height: 13vh;
         padding-left: 5vw;
+        @media (min-width: $desktop) {
+          padding-left: 10vw;
+        }
 
         p {
           margin: 0;
+
+          .starsign {
+            color: $teal;
+            text-transform: capitalize;
+            // font-style: italic;
+          }
         }
 
         .last-message {

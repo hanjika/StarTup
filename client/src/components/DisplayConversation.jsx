@@ -41,7 +41,7 @@ const DisplayConversation = ({ id, conversation }) => {
             }}>
                 <img src={otherUserData.photo} alt={otherUserData.first_name}></img>
                 <div className='conversation-column'>
-                    <p><b>{otherUserData.first_name}</b></p>
+                    <p><b>{otherUserData.first_name}</b> <span className='starsign'>({otherUserData.starsign})</span></p>
                     <LastMessage key={uuid()} userId={id} message={conversation.messages[conversation.messages.length-1]} otherUserData={otherUserData} />
                 </div>
             </li>
