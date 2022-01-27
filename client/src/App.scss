@@ -39,6 +39,7 @@ header {
   .header-nav {
     .nav-modal {
       background-color: white;
+      box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.3);
       height: 90vh;
       width: 100vw;
       position: fixed;
@@ -295,7 +296,6 @@ header {
     background-size: cover;
     background-position: center;
     box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.3);
-    // z-index: 1;
     @media (min-width: $desktop) {
       width: 20vw;
       height: 60vh;
@@ -397,7 +397,6 @@ header {
           .starsign {
             color: $teal;
             text-transform: capitalize;
-            // font-style: italic;
           }
         }
 
@@ -421,7 +420,8 @@ header {
   width: 100vw;
   height: 80vh;
   background-color: white;
-  border-radius: 10px 10px 0 0; 
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.3);
   overflow-y: scroll;
   cursor: default;
   display: flex;
@@ -434,14 +434,19 @@ header {
     border-radius: 10px;
   }
 
-  .conversation-close-icon {
-    cursor: pointer;
+  .close-modal-button {
     align-self: flex-end;
+    width: auto;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    color: black;
+    margin: 0;
     padding: 1vh;
     @media (min-width: $desktop) {
       padding: 1vw;
     }
-  }
+  } 
 
   .open-conversation-messages {
     list-style-type: none;
@@ -456,6 +461,9 @@ header {
       img {
         width: 8vh;
         height: 8vh;
+        margin: 1vh;
+        object-fit: cover;
+        border-radius: 50%;
         @media (min-width: $desktop) {
           width: 7vw;
           height: 7vw;
@@ -498,19 +506,35 @@ header {
   }
 
   .send-message-form {
+    position: fixed;
+    bottom: 2vh;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
     align-items: flex-end;
+    justify-content: center;
+    @media (min-width: $desktop) {
+      position: static;
+    }
+
     input {
-      width: 60%;
+      width: 80%;
       height: 5vh;
+      margin: 0;
+      border: 2px solid lightgrey;
+      border-right: none;
+      padding-left: 2vw;
+      @media (min-width: $desktop) {
+        padding-left: 1vw;
+      }
     }
 
     button {
       background-color: $yellow;
-      border: none;
+      width: 6vh;
+      height: 6vh;
+      border-radius: 0 8px 8px 0;
       @media (min-width: $desktop) {
-        width: 10vw
+        border-radius: 0 8px 8px 0;
       }
     }
   }

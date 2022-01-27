@@ -23,7 +23,6 @@ const Conversations = ({ id }) => {
   }, [allConversations]);
 
   useEffect(() => {
-    console.log(id);
     axios.get('http://localhost:3000/api/messages/').then(
       (result) => {
         setAllConversations(result.data);
