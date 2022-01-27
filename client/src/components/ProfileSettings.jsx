@@ -37,7 +37,8 @@ const ProfileSettings = ({ id }) => {
                 setError(error)
             }
         )
-    }, []);
+    }, [])
+
 
     if (error) {
         return <Error errorMessage={error.message} />;

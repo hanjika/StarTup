@@ -57,7 +57,6 @@ const SignUp = () => {
         }
     }, [data]);
 
-
     if (error) {
         return <Error errorMessage={error.message} />;
     } else if (isRegister) {
@@ -96,7 +95,6 @@ const SignUp = () => {
                 <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
 
                 <button type='submit'>Sign up</button>
-
             </form >
         </section >
     )

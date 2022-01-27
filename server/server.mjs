@@ -57,7 +57,9 @@ app.post('/api/login', async (req, res, next) => {
         req.session.conversations = []
 
         message.conversations.forEach(elem =>
-            req.session.conversations.push(elem)
+            elem.messages.forEach(conv => {
+                req.session.conversations.push(conv)
+            })
         )
         req.session.save()
         console.log(req.session)
@@ -92,6 +94,11 @@ app.post('/api/signup', async (req, res, next) => {
 
 app.get('/login/connect', (req, res) => {
     res.status(200).json(req.session)
+})
+
+app.patch('/profilsettings', (req, res) => {
+    let user = users.find(user => user.email == req.session.email)
+    console.log(user)
 })
 
 app.listen(port)
