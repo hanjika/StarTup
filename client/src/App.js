@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Router basename='/StarTup'>
+      <Router>
       <Header id={id} />
         <main>
           <Routes>
