@@ -35,7 +35,7 @@ const ProfileSettings = ({ id }) => {
 
     useEffect(() => {
         if (patchData) {
-            axios.patch('http://localhost:3000/api/users/' + id, patchData).then(
+            axios.patch('/api/users/' + id, patchData).then(
                 (result) => {
                     setIsEdited(true);
                 },
@@ -47,7 +47,7 @@ const ProfileSettings = ({ id }) => {
     }, [patchData]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/login/connect').then(
+        axios.get('/login/connect').then(
             (result) => {
                 console.log(result.data)
                 setFirstName(result.data.first_name)

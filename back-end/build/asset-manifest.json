@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.d01a3a7d.css",
-    "main.js": "/static/js/main.3e9795d7.js",
-    "static/media/colleagues-highfive-desktop.jpg": "/static/media/colleagues-highfive-desktop.2544a9074bbd42cd0b5f.jpg",
-    "static/media/colleagues-highfive.jpg": "/static/media/colleagues-highfive.29c92493db2baae65aec.jpg",
-    "static/media/startup-logo-colour.png": "/static/media/startup-logo-colour.67cb17e510eb803444fc.png",
-    "index.html": "/index.html",
-    "main.d01a3a7d.css.map": "/static/css/main.d01a3a7d.css.map",
-    "main.3e9795d7.js.map": "/static/js/main.3e9795d7.js.map"
+    "main.css": "/StarTup/static/css/main.517b4937.css",
+    "main.js": "/StarTup/static/js/main.14cae683.js",
+    "static/media/colleagues-highfive-desktop.jpg": "/StarTup/static/media/colleagues-highfive-desktop.2544a9074bbd42cd0b5f.jpg",
+    "static/media/colleagues-highfive.jpg": "/StarTup/static/media/colleagues-highfive.29c92493db2baae65aec.jpg",
+    "static/media/startup-logo-colour.png": "/StarTup/static/media/startup-logo-colour.67cb17e510eb803444fc.png",
+    "index.html": "/StarTup/index.html",
+    "main.517b4937.css.map": "/StarTup/static/css/main.517b4937.css.map",
+    "main.14cae683.js.map": "/StarTup/static/js/main.14cae683.js.map"
   },
   "entrypoints": [
-    "static/css/main.d01a3a7d.css",
-    "static/js/main.3e9795d7.js"
+    "static/css/main.517b4937.css",
+    "static/js/main.14cae683.js"
   ]
 }

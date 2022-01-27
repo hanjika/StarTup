@@ -28,7 +28,7 @@ const OpenConversation = ({ setOpenConv, userId, conversation, otherUserData }) 
 
     useEffect(() => {
         if (postData) {
-            axios.post('http://localhost:3000/api/conversations/' + conversation.conversationId, postData).then(
+            axios.post('/api/conversations/' + conversation.conversationId, postData).then(
                 (result) => {
                     console.log(result.data)
                     setIsSent(true);

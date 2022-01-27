@@ -18,7 +18,7 @@ const DisplayConversation = ({ id, conversation }) => {
 
     useEffect(() => {
         if (otherUserId !== null) {
-            axios.get('http://localhost:3000/api/users/' + otherUserId).then(
+            axios.get('/api/users/' + otherUserId).then(
                 (result) => {
                     setIsLoaded(true);
                     setOtherUserData(result.data);
