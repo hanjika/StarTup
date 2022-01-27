@@ -19,6 +19,10 @@ const ProfileSettings = ({ id }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
 
+    const editProfile = () => {
+        console.log('Must edit the profile');
+    }
+
     useEffect(() => {
         axios.get('http://localhost:3000/login/connect').then(
             (result) => {
@@ -45,10 +49,8 @@ const ProfileSettings = ({ id }) => {
         return <p>Loading...</p>;
     } else {
         return (
-            <section className='section-profile-settings'>
+            <section className='section-profile-settings' onSubmit={editProfile}>
                 <h2>Profile Settings</h2>
-
-                {/* <div className='profile-photo' style={{backgroundImage: `url(${photo})`}}></div> */}
                 {photo === '' ? (
                     <img src={blankProfileImage} className='profile-photo' alt="You" />
                 ) : (
