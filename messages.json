@@ -1,0 +1,34 @@
+[
+    {
+        "conversationId": "1",
+        "userIds": ["1", "2"],
+        "messages": [
+            {
+                "authorId": "1",
+                "content": "How is going?",
+                "date": "19-01-2022"
+            },
+            {
+                "authorId": "2",
+                "content": "Salut",
+                "date": "18-01-2022"
+            }
+        ]
+    },
+    {
+        "conversationId": "2",
+        "userIds": ["1", "c03c4a1-f00-edaf-27c8-5eff7f431a1"],
+        "messages": [
+            {
+                "authorId": "1",
+                "content": "How is going?",
+                "date": "19-01-2022"
+            },
+            {
+                "authorId": "c03c4a1-f00-edaf-27c8-5eff7f431a1",
+                "content": "Salut",
+                "date": "18-01-2022"
+            }
+        ]
+    }
+]
