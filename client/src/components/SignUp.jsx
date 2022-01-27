@@ -3,7 +3,6 @@ import moment from 'moment';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import Error from './Error';
-import { Link } from 'react-router-dom'
 import SignUpSuccess from './SignUpSuccess';
 
 const SignUp = () => {
