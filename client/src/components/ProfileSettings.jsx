@@ -19,29 +19,29 @@ const ProfileSettings = ({ id }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
 
-    const editProfile = () => {
-        console.log('Must edit the profile');
-    }
-
     useEffect(() => {
-        axios.get('http://localhost:3000/login/connect').then(
-            (result) => {
-                console.log(result.data)
-                setFirstName(result.data.first_name)
-                setLastName(result.data.last_name)
-                setBirthdate(result.data.birthdate)
-                setPhoto(result.data.photo)
-                setMotto(result.data.motto)
-                setEmail(result.data.email)
-                setPassword(result.data.password)
-                setIsLoaded(true)
-            },
-            (error) => {
-                setIsLoaded(true)
-                setError(error)
-            }
-        )
-    }, []);
+        axios
+            .patch
+            .get('http://localhost:3000/login/connect').then(
+                (result) => {
+                    console.log(result.data)
+                    setFirstName(result.data.first_name)
+                    setLastName(result.data.last_name)
+                    setBirthdate(result.data.birthdate)
+                    setPhoto(result.data.photo)
+                    setMotto(result.data.motto)
+                    setEmail(result.data.email)
+                    setPassword(result.data.password)
+                    setIsLoaded(true)
+                },
+                (error) => {
+                    setIsLoaded(true)
+                    setError(error)
+                }
+
+            )
+    }, [])
+
 
     if (error) {
         return <Error errorMessage={error.message} />;

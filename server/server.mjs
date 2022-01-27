@@ -15,7 +15,6 @@ const cors = require('cors')
 const fs = require('fs')
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 const port = process.env.port || 3000
 const path = __dirname + '/build/'
 const app = express()
@@ -49,8 +48,8 @@ app.post('/login', async (req, res, next) => {
             id: user.id,
         })
         req.session.email = req.body.email
-        req.session.firstName = user.first_name
-        req.session.lastName = user.last_name
+        req.session.first_name = user.first_name
+        req.session.last_name = user.last_name
         req.session.birthdate = user.birthdate
         req.session.motto = user.motto
         req.session.photo = user.photo

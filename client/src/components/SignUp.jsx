@@ -91,7 +91,6 @@ const SignUp = () => {
 
                 <label for='photo'><b>Attach Photo URL</b></label>
                 <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
-
                 <button type='submit'>Sign up</button>
             </form >
         </section >
