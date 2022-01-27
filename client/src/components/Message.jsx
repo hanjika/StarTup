@@ -9,7 +9,7 @@ const Message = ({ userId, message, otherUserData }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/users/' + userId).then(
+        axios.get('/api/users/' + userId).then(
             (result) => {
                 setIsLoaded(true);
                 setUserPhoto(result.data.photo);

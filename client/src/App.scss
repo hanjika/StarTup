@@ -113,7 +113,7 @@ header {
     .homepage-first-view {
       @include centeredFlexColumn;
       position: relative;
-      background-image: url('images/colleagues-highfive.jpg');
+      background-image: url('images/colleagues-highfive-compressed.jpg');
       background-position: 0px 0; 
       background-size: cover;
       height: 50vh;
@@ -127,7 +127,7 @@ header {
       }
 
       @media (min-width: $desktop) {
-        background-image: url('images/colleagues-highfive-desktop.jpg');
+        background-image: url('images/colleagues-highfive-desktop-compressed.jpg');
         height: 100vh;
       }
 
