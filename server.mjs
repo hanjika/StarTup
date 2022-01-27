@@ -85,11 +85,7 @@ app.post('/signup', async (req, res, next) => {
     dataUser.push(newUser)
     var newDataUser = JSON.stringify(dataUser)
     console.log(JSON.parse(newDataUser))
-    fs.unlink('users.json', function (err) {
-        if (err) throw err
-        console.log('File removed')
-    })
-    fs.writeFile('users.json', newDataUser, (err) => {
+    fs.writeFileSync('users.json', newDataUser, (err) => {
         if (err) throw err
         console.log('New data added')
     })
