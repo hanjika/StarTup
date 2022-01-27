@@ -17,8 +17,8 @@ const SignUp = () => {
     const [motto, setMotto] = useState('');
     const [photo, setPhoto] = useState('');
     const [data, setData] = useState(null);
-    const [isRegister, setIsRegister] = useState(false)
-    const [error, setError] = useState(null)
+    const [isRegistered, setIsRegistered] = useState(false);
+    const [error, setError] = useState(null);
 
     const getSign = (birthdate) => {
         const signs = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
@@ -30,24 +30,25 @@ const SignUp = () => {
         e.preventDefault();
         const newUser = {
             id: uuid(),
-            firstName: firstName,
-            lastName: lastName,
+            first_name: firstName,
+            last_name: lastName,
             email: email,
             password: password,
             birthdate: birthdate,
             motto: motto,
             starsign: getSign(birthdate),
-            photo: photo
+            photo: photo,
+            liked_user_ids: []
         }
         setData(newUser);
     }
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/api/signup/', data).then(
+            axios.post('http://localhost:3000/signup', data).then(
                 (result) => {
                     console.log(result.data)
-                    setIsRegister(true)
+                    setIsRegistered(true);
                 },
                 (error) => {
                     setError(error);
@@ -59,27 +60,24 @@ const SignUp = () => {
 
     if (error) {
         return <Error errorMessage={error.message} />;
-    } else if (isRegister) {
-        return <SignUpSuccess />
-    }
-    if (isRegister) {
-        return <SignUpSuccess />
+    } else if (isRegistered) {
+        return <SignUpSuccess data={data} />
     }
 
     return (
         <section className='section-signup'>
             <form className='form-signup' onSubmit={handleSignupSubmit}>
                 <h2>Sign Up</h2>
-                <label for='first-name' className='required'><b>First Name</b></label>
-                <input type='text' value={firstName} name='first-name' required onChange={(e) => setFirstName(e.target.value)}></input>
+                <label for='firstName' className='required'><b>First Name</b></label>
+                <input type='text' value={firstName} name='firstName' required onChange={(e) => setFirstName(e.target.value)}></input>
 
-                <label for='last-name' className='required'><b>Last Name</b></label>
-                <input type='text' value={lastName} name='last-name' required onChange={(e) => setLastName(e.target.value)}></input>
+                <label for='lastName' className='required'><b>Last Name</b></label>
+                <input type='text' value={lastName} name='lastName' required onChange={(e) => setLastName(e.target.value)}></input>
 
                 <label for='email' className='required'><b>Email</b></label>
                 <input type='email' value={email} name='email' required onChange={(e) => setEmail(e.target.value)}></input>
 
-                <label for='password' className='required'><b>Choose Password</b></label>
+                <label for='password' className='required'><b>Password</b></label>
                 <input type='password' value={password} name='password' required onChange={(e) => setPassword(e.target.value)}></input>
 
                 <label for='passwordRepeat' className='required'><b>Confirm Password</b></label>
@@ -94,11 +92,7 @@ const SignUp = () => {
                 <label for='photo'><b>Attach Photo URL</b></label>
                 <input type='photo' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)}></input>
 
-                <Link to={'/signupsuccess'}>
-                    <button type='submit'>Sign up</button>
-                </Link>
-
-
+                <button type='submit'>Sign up</button>
             </form >
         </section >
     )

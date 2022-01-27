@@ -4,6 +4,18 @@ A mobile-first website created to enable the matchmaking of entrepreneurs. Singl
 
 Developed by [Shanon](https://github.com/shanon-richet) and [Hanna](https://github.com/hanjika).
 
+## How to access all features
+
+Sign up as a new user or log in using one of the following existing accounts:
+
+| Email    | Password |
+|----------|----------|
+| shanon.richet@gmail.com | fnjk*  |
+| hanna.masanjika@gmail.com | sdop8? |
+| jamesmd@gmail.com | jamesm1 |
+| john@gmail.com | john |
+| katesmith@gmail.com | kates1 |
+
 ## Launch 
 - cd client
 - npm run start-server
