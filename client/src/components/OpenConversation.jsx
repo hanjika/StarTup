@@ -15,15 +15,17 @@ const OpenConversation = ({ setOpenConv, userId, conversation, otherUserData }) 
 
     const sendMessage = (e) => {
         e.preventDefault();
-        console.log('conversationId: ' + conversation.conversationId);
-        const messageData = {
-            authorId: userId,
-            content: newMessage,
-            date: moment(new Date()).format('DD-MM-YYYY')
-        };
-        console.log(messageData)
-        // setPostData(messageData);
-        setNewMessage('');
+        if (newMessage !== '') {
+            console.log('conversationId: ' + conversation.conversationId);
+            const messageData = {
+                authorId: userId,
+                content: newMessage,
+                date: moment(new Date()).format('DD-MM-YYYY')
+            };
+            console.log(messageData)
+            // setPostData(messageData);
+            setNewMessage('');
+        }
     }
 
     useEffect(() => {
@@ -61,8 +63,8 @@ const OpenConversation = ({ setOpenConv, userId, conversation, otherUserData }) 
                     e.preventDefault();
                     setNewMessage(e.target.value);
                 }} />
-                <button className='send-message-button' type='submit'>
-                    <MdSend />
+                <button className={newMessage === '' ? 'send-message-button inactive' : 'send-message-button active'} type='submit'>
+                    <MdSend size='20px' />
                 </button>
             </form>
         </div>
