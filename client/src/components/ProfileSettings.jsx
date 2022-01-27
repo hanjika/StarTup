@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import Error from './Error';
 import blankProfileImage from '../images/blank-profile-picture.jpg';
@@ -47,7 +46,7 @@ const ProfileSettings = ({ id }) => {
     }, [patchData]);
 
     useEffect(() => {
-        axios.get('/login/connect').then(
+        axios.get('/api/login/connect').then(
             (result) => {
                 console.log(result.data)
                 setFirstName(result.data.first_name)
