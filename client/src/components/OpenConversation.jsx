@@ -19,7 +19,7 @@ const OpenConversation = ({ setOpenConv, userId, conversation, otherUserData }) 
         const messageData = {
             authorId: userId,
             content: newMessage,
-            date:  moment(new Date()).format('DD-MM-YYYY')
+            date: moment(new Date()).format('DD-MM-YYYY')
         };
         console.log(messageData)
         // setPostData(messageData);

@@ -6,22 +6,45 @@ import Error from './Error';
 import blankProfileImage from '../images/blank-profile-picture.jpg';
 
 const ProfileSettings = ({ id }) => {
-    const today = moment(new Date()).format('YYYY-MM-DD');
     let navigate = useNavigate();
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [birthdate, setBirthdate] = useState(today);
     const [motto, setMotto] = useState('');
     const [photo, setPhoto] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [patchData, setPatchData] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isEdited, setIsEdited] = useState(false);
     const [error, setError] = useState(null);
 
-    const editProfile = () => {
-        console.log('Must edit the profile');
+    const editProfile = (e) => {
+        e.preventDefault();
+        const newDetails = {
+            first_name: firstName,
+            last_name: lastName,
+            photo: photo,
+            motto: motto,
+            email: email,
+            password: password
+        }
+        console.log(newDetails);
+        // setPatchData(newDetails);
     }
+
+    useEffect(() => {
+        if (patchData) {
+            axios.patch('http://localhost:3000/api/users/' + id, patchData).then(
+                (result) => {
+                    setIsEdited(true);
+                },
+                (error) => {
+                    setError(error);
+                }
+            )
+        }
+    }, [patchData]);
 
     useEffect(() => {
         axios.get('http://localhost:3000/login/connect').then(
@@ -29,7 +52,6 @@ const ProfileSettings = ({ id }) => {
                 console.log(result.data)
                 setFirstName(result.data.first_name)
                 setLastName(result.data.last_name)
-                setBirthdate(result.data.birthdate)
                 setPhoto(result.data.photo)
                 setMotto(result.data.motto)
                 setEmail(result.data.email)
@@ -42,6 +64,10 @@ const ProfileSettings = ({ id }) => {
             }
         )
     }, []);
+
+    if (isEdited) {
+        console.log('Profile edited');
+    }
 
     if (error) {
         return <Error errorMessage={error.message} />;
@@ -65,9 +91,6 @@ const ProfileSettings = ({ id }) => {
 
                     <label for='lastName' className='required'><b>Last Name</b></label>
                     <input type='text' value={lastName} name='lastName' required onChange={(e) => setLastName(e.target.value)} />
-
-                    <label for='birthdate' className='required'><b>Birthdate</b></label>
-                    <input type='date' max={today} value={birthdate} name='birthdate' required onChange={(e) => setBirthdate(e.target.value)} />
 
                     <label for='motto'><b>Personal Motto</b></label>
                     <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)} />
