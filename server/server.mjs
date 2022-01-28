@@ -94,26 +94,5 @@ app.get('/api/login/connect', (req, res) => {
     res.status(200).json(req.session)
 })
 
-app.patch('/profilsettings', (req, res) => {
-    console.log(req.session)
-    var profilData = JSON.parse(fs.readFileSync(`${__dirname}/users.json`))
-    let user = profilData.find(user => user.email === req.body.email)
-
-    user.photo[user.photo.length - 1]
-    user.photo = req.body.photo
-
-    user.first_name[user.first_name.length - 1]
-    user.first_name = req.body.first_name
-
-    user.last_name[user.last_name.length - 1]
-    user.last_name = req.body.last_name
-
-    user.motto[user.motto.length - 1]
-    user.motto = req.body.motto
-
-    user.password[user.password.length - 1]
-    user.password = req.body.password
-})
-
 app.listen(port)
 console.log('Server started at http://localhost:' + port)
