@@ -44,7 +44,7 @@ const SignUp = () => {
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/signup', data).then(
+            axios.post('/api/signup', data).then(
                 (result) => {
                     console.log(result.data)
                     setIsRegistered(true);

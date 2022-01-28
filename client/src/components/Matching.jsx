@@ -27,7 +27,7 @@ const Matching = ({ id, likedUsers, setLikedUsers }) => {
     }, [otherUsers]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/users/').then(
+        axios.get('/api/users/').then(
             (result) => {
                 setIsLoaded(true);
                 setOtherUsers(result.data.filter(user => user.id !== id));
