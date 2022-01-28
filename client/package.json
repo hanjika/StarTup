@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-server": "npm run build && cp -r build ../server && cd ../server && npm start",
+    "start-server": "npm run build && cp -r build ../server && cd ../server && npm run start:dev",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
