@@ -28,14 +28,15 @@ const ProfileSettings = ({ id }) => {
             email: email,
             password: password
         }
-        console.log(newDetails);
-        // setPatchData(newDetails);
+        // console.log(newDetails);
+        setPatchData(newDetails);
     }
 
     useEffect(() => {
         if (patchData) {
             axios.patch('/api/users/' + id, patchData).then(
                 (result) => {
+                    console.log(result.data);
                     setIsEdited(true);
                 },
                 (error) => {
@@ -48,7 +49,6 @@ const ProfileSettings = ({ id }) => {
     useEffect(() => {
         axios.get('/api/login/connect').then(
             (result) => {
-                console.log(result.data)
                 setFirstName(result.data.first_name)
                 setLastName(result.data.last_name)
                 setPhoto(result.data.photo)
@@ -65,7 +65,7 @@ const ProfileSettings = ({ id }) => {
     }, []);
 
     if (isEdited) {
-        console.log('Profile edited');
+        alert('Profile edited');
     }
 
     if (error) {
