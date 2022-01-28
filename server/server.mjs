@@ -5,6 +5,7 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import usersRouter from './routes/usersRouter.mjs'
 import messagesRouter from './routes/messagesRouter.mjs'
+import { json } from "express"
 
 const require = createRequire(import.meta.url);
 const users = require('./users.json')
@@ -59,7 +60,6 @@ app.post('/login', async (req, res, next) => {
         message.messages.forEach(element => {
             req.session.conversations.push(element)
         })
-
         req.session.save()
         console.log(req.session)
     } else {
@@ -92,6 +92,27 @@ app.post('/signup', async (req, res, next) => {
 })
 app.get('/login/connect', (req, res) => {
     res.status(200).json(req.session)
+})
+
+app.patch('/profilsettings', (req, res) => {
+    console.log(req.session)
+    var profilData = JSON.parse(fs.readFileSync(`${__dirname}/users.json`))
+    let user = profilData.find(user => user.email === req.body.email)
+
+    user.photo[user.photo.length - 1]
+    user.photo = req.body.photo
+
+    user.first_name[user.first_name.length - 1]
+    user.first_name = req.body.first_name
+
+    user.last_name[user.last_name.length - 1]
+    user.last_name = req.body.last_name
+
+    user.motto[user.motto.length - 1]
+    user.motto = req.body.motto
+
+    user.password[user.password.length - 1]
+    user.password = req.body.password
 })
 
 app.listen(port)

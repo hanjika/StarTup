@@ -86,11 +86,11 @@ const ProfileSettings = ({ id }) => {
                     <label for='photo'><b>Change Photo</b></label>
                     <input type='text' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)} />
 
-                    <label for='firstName' className='required'><b>First Name</b></label>
-                    <input type='text' value={firstName} name='firstName' required onChange={(e) => setFirstName(e.target.value)} />
+                    <label for='first_name' className='required'><b>First Name</b></label>
+                    <input type='text' value={firstName} name='first_name' required onChange={(e) => setFirstName(e.target.value)} />
 
-                    <label for='lastName' className='required'><b>Last Name</b></label>
-                    <input type='text' value={lastName} name='lastName' required onChange={(e) => setLastName(e.target.value)} />
+                    <label for='last_name' className='required'><b>Last Name</b></label>
+                    <input type='text' value={lastName} name='last_name' required onChange={(e) => setLastName(e.target.value)} />
 
                     <label for='motto'><b>Personal Motto</b></label>
                     <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)} />

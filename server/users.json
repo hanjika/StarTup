@@ -1,1 +1,81 @@
-[{"id":"1","email":"shanon.richet@gmail.com","password":"fnjk*","first_name":"Shanon","last_name":"Richet","birthdate":"03-03-1999","motto":"my motto","starsign":"pisces","photo":"https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80","liked_user_ids":["2","c03c4a1-f00-edaf-27c8-5eff7f431a1"]},{"id":"2","email":"hanna.masanjika@gmail.com","password":"sdop8?","first_name":"Hanna","last_name":"Masanjika","birthdate":"16-10-1996","motto":"my motto 2","starsign":"libra","photo":"https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=368&q=80","liked_user_ids":["1"]},{"id":"26eeb5c-046-f021-403b-6d4dfe0a04a","email":"jamesmd@gmail.com","password":"jamesm1","first_name":"James","last_name":"McDonald","birthdate":"1990-07-19","motto":"Nothing is impossible","starsign":"cancer","photo":"https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80","liked_user_ids":[]},{"id":"112e7bc-02a0-7715-5e46-5220c87e6e0","email":"katesmith@gmail.com","password":"kates1","first_name":"Kate","last_name":"Smith","birthdate":"1987-09-22","motto":"Work hard, play hard","starsign":"virgo","photo":"https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80","liked_user_ids":""},{"id":"c03c4a1-f00-edaf-27c8-5eff7f431a1","email":"oscarl@gmail.com","password":"yooscar","first_name":"Oscar","last_name":"Lloyd","birthdate":"1994-06-14","motto":"Busy business","starsign":"gemini","photo":"https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80","liked_user_ids":["1"]},{"id":"3dd7844-8de-d3cb-65d1-a611e0c2","email":"john@gmail.com","password":"john","first_name":"John","last_name":"Doe","birthdate":"2022-01-27","motto":"","starsign":"aquarius","photo":"","liked_user_ids":""}]
+[
+    {
+        "id": "1",
+        "email": "shanon.richet@gmail.com",
+        "password": "fnjk*",
+        "first_name": "Shanon",
+        "last_name": "Richet",
+        "birthdate": "03-03-1999",
+        "motto": "my motto",
+        "starsign": "pisces",
+        "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+        "liked_user_ids": [
+            "2",
+            "c03c4a1-f00-edaf-27c8-5eff7f431a1"
+        ]
+    },
+    {
+        "id": "2",
+        "email": "hanna.masanjika@gmail.com",
+        "password": "sdop8?",
+        "first_name": "Hanna",
+        "last_name": "Masanjika",
+        "birthdate": "16-10-1996",
+        "motto": "my motto 2",
+        "starsign": "libra",
+        "photo": "https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=368&q=80",
+        "liked_user_ids": [
+            "1"
+        ]
+    },
+    {
+        "id": "26eeb5c-046-f021-403b-6d4dfe0a04a",
+        "email": "jamesmd@gmail.com",
+        "password": "jamesm1",
+        "first_name": "James",
+        "last_name": "McDonald",
+        "birthdate": "1990-07-19",
+        "motto": "Nothing is impossible",
+        "starsign": "cancer",
+        "photo": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+        "liked_user_ids": []
+    },
+    {
+        "id": "112e7bc-02a0-7715-5e46-5220c87e6e0",
+        "email": "katesmith@gmail.com",
+        "password": "kates1",
+        "first_name": "Kate",
+        "last_name": "Smith",
+        "birthdate": "1987-09-22",
+        "motto": "Work hard, play hard",
+        "starsign": "virgo",
+        "photo": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "liked_user_ids": ""
+    },
+    {
+        "id": "c03c4a1-f00-edaf-27c8-5eff7f431a1",
+        "email": "oscarl@gmail.com",
+        "password": "yooscar",
+        "first_name": "Oscar",
+        "last_name": "Lloyd",
+        "birthdate": "1994-06-14",
+        "motto": "Busy business",
+        "starsign": "gemini",
+        "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "liked_user_ids": [
+            "1"
+        ]
+    },
+    {
+        "id": "3dd7844-8de-d3cb-65d1-a611e0c2",
+        "email": "john@gmail.com",
+        "password": "john",
+        "first_name": "John",
+        "last_name": "Doe",
+        "birthdate": "2022-01-27",
+        "motto": "",
+        "starsign": "aquarius",
+        "photo": "",
+        "liked_user_ids": ""
+    }
+]
