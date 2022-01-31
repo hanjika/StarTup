@@ -36,3 +36,19 @@ Sign up as a new user or log in using one of the following existing accounts:
 - An enpoint to retrieve and send message to a conversation (POST+GET /api/conversations/[id])
 - (optional) An endpoint that lists potential matches (GET /api/matches)
 - (optional) A user-settings endpoint to edit user profile (PATCH /api/users/[id])
+
+## Previews (unfinished)
+
+### Mobile
+
+![Mobile homepage](images-readme/mobile_homepage_w_border.png)
+![Mobile matching](images-readme/mobile_matching.png)
+![Mobile conversation list](images-readme/mobile_conversation_list.png)
+![Mobile conversation](images-readme/mobile_conversation.png)
+![Mobile profile settings](images-readme/profile_settings.png)
+
+### Desktop
+
+![Desktop matching](images-readme/desktop_matching.png)
+![Desktop conversation](images-readme/desktop_conversation.png)
+
