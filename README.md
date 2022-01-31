@@ -2,7 +2,7 @@
 
 A mobile-first website created to enable the matchmaking of entrepreneurs. Single entrepreneurs can find their entrepreneurial soulmate through this platform to launch interesting conversations about business.
 
-Developed by [Shanon](https://github.com/shanon-richet) and [Hanna](https://github.com/hanjika).
+Assigned by Coach Kelian. Developed by [Shanon](https://github.com/shanon-richet) and [Hanna](https://github.com/hanjika).
 
 ## How to access all features
 
@@ -41,11 +41,8 @@ Sign up as a new user or log in using one of the following existing accounts:
 
 ### Mobile
 
-![Mobile homepage](images-readme/mobile_homepage_w_border.png)
-![Mobile matching](images-readme/mobile_matching.png)
-![Mobile conversation list](images-readme/mobile_conversation_list.png)
-![Mobile conversation](images-readme/mobile_conversation.png)
-![Mobile profile settings](images-readme/profile_settings.png)
+![Mobile previews](images-readme/mobile_previews_1.png)
+![Mobile previews](images-readme/mobile_previews_2.png)
 
 ### Desktop
 
