@@ -5,6 +5,7 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import usersRouter from './routes/usersRouter.mjs'
 import messagesRouter from './routes/messagesRouter.mjs'
+import { json } from "express"
 
 const require = createRequire(import.meta.url);
 const users = require('./users.json')
@@ -39,7 +40,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
-app.post('/login', async (req, res, next) => {
+app.post('/api/login', async (req, res, next) => {
     let user = users.find(user => user.email == req.body.email)
     let message = messages.find(message => message.userIds[0] == user.id || message.userIds[1] == user.id)
     console.log(message)
@@ -59,7 +60,6 @@ app.post('/login', async (req, res, next) => {
         message.messages.forEach(element => {
             req.session.conversations.push(element)
         })
-
         req.session.save()
         console.log(req.session)
     } else {
@@ -67,7 +67,7 @@ app.post('/login', async (req, res, next) => {
     }
 })
 
-app.post('/signup', async (req, res, next) => {
+app.post('/api/signup', async (req, res, next) => {
     var data = fs.readFileSync('users.json')
     var dataUser = JSON.parse(data)
     let newUser = {
@@ -90,7 +90,7 @@ app.post('/signup', async (req, res, next) => {
         console.log('New data added')
     })
 })
-app.get('/login/connect', (req, res) => {
+app.get('/api/login/connect', (req, res) => {
     res.status(200).json(req.session)
 })
 

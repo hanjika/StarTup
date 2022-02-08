@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import Error from './Error';
 import blankProfileImage from '../images/blank-profile-picture.jpg';
@@ -29,14 +28,15 @@ const ProfileSettings = ({ id }) => {
             email: email,
             password: password
         }
-        console.log(newDetails);
-        // setPatchData(newDetails);
+        // console.log(newDetails);
+        setPatchData(newDetails);
     }
 
     useEffect(() => {
         if (patchData) {
-            axios.patch('http://localhost:3000/api/users/' + id, patchData).then(
+            axios.patch('/api/users/' + id, patchData).then(
                 (result) => {
+                    console.log(result.data);
                     setIsEdited(true);
                 },
                 (error) => {
@@ -47,9 +47,8 @@ const ProfileSettings = ({ id }) => {
     }, [patchData]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/login/connect').then(
+        axios.get('/api/login/connect').then(
             (result) => {
-                console.log(result.data)
                 setFirstName(result.data.first_name)
                 setLastName(result.data.last_name)
                 setPhoto(result.data.photo)
@@ -66,7 +65,7 @@ const ProfileSettings = ({ id }) => {
     }, []);
 
     if (isEdited) {
-        console.log('Profile edited');
+        alert('Profile edited');
     }
 
     if (error) {
@@ -86,11 +85,11 @@ const ProfileSettings = ({ id }) => {
                     <label for='photo'><b>Change Photo</b></label>
                     <input type='text' value={photo} name='photo' onChange={(e) => setPhoto(e.target.value)} />
 
-                    <label for='firstName' className='required'><b>First Name</b></label>
-                    <input type='text' value={firstName} name='firstName' required onChange={(e) => setFirstName(e.target.value)} />
+                    <label for='first_name' className='required'><b>First Name</b></label>
+                    <input type='text' value={firstName} name='first_name' required onChange={(e) => setFirstName(e.target.value)} />
 
-                    <label for='lastName' className='required'><b>Last Name</b></label>
-                    <input type='text' value={lastName} name='lastName' required onChange={(e) => setLastName(e.target.value)} />
+                    <label for='last_name' className='required'><b>Last Name</b></label>
+                    <input type='text' value={lastName} name='last_name' required onChange={(e) => setLastName(e.target.value)} />
 
                     <label for='motto'><b>Personal Motto</b></label>
                     <input type='motto' value={motto} name='motto' onChange={(e) => setMotto(e.target.value)} />

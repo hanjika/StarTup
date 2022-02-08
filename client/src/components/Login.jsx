@@ -21,7 +21,7 @@ const Login = ({ id, setId, firstName, setFirstName }) => {
 
     useEffect(() => {
         if (data) {
-            axios.post('http://localhost:3000/login', data).then(
+            axios.post('/api/login', data).then(
                 (result) => {
                     setId(result.data.id);
                     setFirstName(result.data.first_name);

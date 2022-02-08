@@ -113,7 +113,7 @@ header {
     .homepage-first-view {
       @include centeredFlexColumn;
       position: relative;
-      background-image: url('images/colleagues-highfive.jpg');
+      background-image: url('images/colleagues-highfive-compressed.jpg');
       background-position: 0px 0; 
       background-size: cover;
       height: 50vh;
@@ -127,7 +127,7 @@ header {
       }
 
       @media (min-width: $desktop) {
-        background-image: url('images/colleagues-highfive-desktop.jpg');
+        background-image: url('images/colleagues-highfive-desktop-compressed.jpg');
         height: 100vh;
       }
 
@@ -521,20 +521,31 @@ header {
       height: 5vh;
       margin: 0;
       border: 2px solid lightgrey;
-      border-right: none;
+      border-radius: 5px;
       padding-left: 2vw;
       @media (min-width: $desktop) {
         padding-left: 1vw;
       }
     }
 
-    button {
-      background-color: $yellow;
-      width: 6vh;
-      height: 6vh;
-      border-radius: 0 8px 8px 0;
-      @media (min-width: $desktop) {
-        border-radius: 0 8px 8px 0;
+    .send-message-button {
+      background-color: transparent;
+      width: 5vh;
+      height: 5vh;
+      border: none;
+      transition: 0.4s;
+    }
+
+    .send-message-button.inactive {
+      color: lightgrey;
+      cursor: default;
+    }
+
+    .send-message-button.active {
+      color: black;
+
+      &:hover {
+        color: $teal;
       }
     }
   }
