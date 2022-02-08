@@ -16,7 +16,7 @@ const fs = require('fs')
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const port = process.env.port || 3000
-const path = __dirname + '/build/'
+const path = __dirname + '/client/build/'
 const app = express()
 
 app.set('trust proxy', 1)

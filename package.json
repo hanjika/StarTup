@@ -1,0 +1,41 @@
+{
+  "name": "start-up",
+  "version": "1.0.0",
+  "description": "chat application",
+  "main": "index.html",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "~2.8.5",
+    "express": "^4.17.2",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "cookie-parser": "^1.4.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.mjs",
+    "serverstart": "DEBUG=express-locallibrary-tutorial:* npm start",
+    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies."
+  },
+  "keywords": [],
+  "author": "Richet Shanon, Hanna Masanjika",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/hanjika/StarTup"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "eslintConfig": {
+    "globals": {
+      "window": true
+    }
+  }
+}
